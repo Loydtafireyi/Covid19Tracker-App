@@ -146,8 +146,50 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
                                 <a href="{{route('survey.index')}}" class="text-decoration-none">
-                                    <i class="fas fa-clinic-medical text-white"></i>
+                                    <i class="fas fa-poll text-white"></i>
                                     <span class="text-white text-decoration-none text-uppercase">Survey</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{route('countries.index')}}" class="text-decoration-none">
+                                    <i class="fas fa-globe-africa text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Countries</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{route('donor-type.index')}}" class="text-decoration-none">
+                                    <i class="fas fa-hand-holding-medical text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Donor Types</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{route('donor-name.index')}}" class="text-decoration-none">
+                                    <i class="fas fa-hand-holding-usd text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Donor Name</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{route('focus-area.index')}}" class="text-decoration-none">
+                                    <i class="fas fa-users text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Focus Area</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{route('pledge.index')}}" class="text-decoration-none">
+                                    <i class="fas fa-money-check-alt text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Pledges</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{route('recieved.index')}}" class="text-decoration-none">
+                                    <i class="fas fa-funnel-dollar text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Recieved Amount</span>
                                 </a>
                                 <span class="text-white"></span>
                             </li>

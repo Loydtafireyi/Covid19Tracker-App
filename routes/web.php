@@ -28,6 +28,12 @@ Route::resource('admin/recovered', 'RecoveredController')->middleware('admin');
 Route::resource('admin/tests', 'TestsController')->middleware('admin');
 Route::resource('admin/quarantine', 'QuarantineController');
 Route::resource('admin/survey', 'SurveyController');
+Route::resource('admin/countries', 'CountriesController');
+Route::resource('admin/donor-type', 'DonorTypeController');
+Route::resource('admin/focus-area', 'FocusAreaController');
+Route::resource('admin/donor-name', 'DonorNameController');
+Route::resource('admin/pledge', 'PledgeController');
+Route::resource('admin/recieved', 'RecievedController');
 
 Route::resource('RequestAmbulance', 'RequestAmbulancesController')->middleware('auth');
 Route::get('stats-by-province', 'StatsByProvinceController@index')->name('provinces');

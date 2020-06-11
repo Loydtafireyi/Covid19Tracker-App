@@ -7,15 +7,15 @@
     <div class="card-body">
         <table class="table table-bordered table-dark table-hover">
         	<thead class="font-weight-normal text-uppercase">
-        		<th>Users</th>
-        		<th>Surveys</th>
         		<th>Cases</th>
+        		<th>Deaths</th>
+        		<th>Donations</th>
         	</thead>
         	<tbody>
         		<tr>
-        			<td>{{ $user->count() }}</td>
-        			<td></td>
         			<td>{{ $infections->count() }}</td>
+        			<td>{{ $deaths->count() }}</td>
+        			<td></td>
         		</tr>
         	</tbody>
         </table>
