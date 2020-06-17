@@ -17,9 +17,10 @@ class CreateInfectionsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('province_id');
             $table->string('date_reported');
-            $table->string('region_code');
             $table->unsignedBigInteger('infections');
             $table->timestamps();
+
+            $table->index('province_id');
         });
     }
 

@@ -1,5 +1,23 @@
 @extends('layouts.frontend')
 
+@section('page_title')
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Zimbabwe</a></li>
+                    <li class="breadcrumb-item active">Covid19 Statistics</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Zimbabwe Covid19 Statistics</h4>
+        </div>
+    </div>
+</div>     
+<!-- end page title --> 
+@endsection
+
 @section('content')
 
 <div class="row">
@@ -26,7 +44,7 @@
 
                <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-warning badge-pill float-left mt-3">83.4% <i class="mdi mdi-trending-up"></i> </span>
+                    <span class="badge badge-warning badge-pill float-left mt-3">{{ $infections->sum('infections') / $tests->sum('tests') * 100  }} % <i class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1"> {{ $infections->sum('infections') }} </h2>
                     <p class="text-muted mb-3">Infected</p>
                 </div>
@@ -65,14 +83,14 @@
 
              <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-danger badge-pill float-left mt-3">10% <i class="mdi mdi-trending-up"></i> </span>
+                    <span class="badge badge-danger badge-pill float-left mt-3">{{ $deaths->sum('deaths') / $infections->sum('infections') * 100 }} % <i class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1"> {{ $deaths->sum('deaths') }} </h2>
                     <p class="text-muted mb-3">Deaths</p>
                 </div>
                 <div class="progress progress-bar-alt-danger progress-sm">
                     <div class="progress-bar bg-danger" role="progressbar"
-                            aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-                            style="width: 10%;">
+                            aria-valuenow="100" aria-valuemin="100" aria-valuemax="100"
+                            style="width: 100%;">
                         <span class="sr-only">10% Complete</span>
                     </div>
                 </div>
@@ -103,15 +121,15 @@
 
             <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-success badge-pill float-left mt-3">6.8% <i class="mdi mdi-trending-up"></i> </span>
+                    <span class="badge badge-success badge-pill float-left mt-3">{{ $recoveries->sum('recovered') / $infections->sum('infections') * 100 }} % <i class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1"> {{ $recoveries->sum('recovered') }} </h2>
                     <p class="text-muted mb-3">Recoveries</p>
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
                     <div class="progress-bar bg-success" role="progressbar"
-                            aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
+                            aria-valuenow="77" aria-valuemin="100" aria-valuemax="100"
                             style="width: 6.8%;">
-                        <span class="sr-only">6.8% Complete</span>
+                        <span class="sr-only">100% Complete</span>
                     </div>
                 </div>
             </div>
@@ -255,58 +273,84 @@
         {
         "region_name": "Mashonaland Central",
         "region_code": "ZWE524",
-        "infected": {!! $mashCentral->sum('infections') !!}
+        "infected": {!! $mashCentral->sum('infections') !!},
+        "deaths": {!! $mashCentral->sum('deaths') !!},
+        "recoveries": {!! $mashCentral->sum('recovered') !!},
         },
         {
         "region_name": "Harare",
         "region_code": "ZWE525",
         "infected":  {!! $harare->sum('infections') !!},
+        "deaths": {!! $harare->sum('deaths') !!},
+        "recoveries": {!! $harare->sum('recovered') !!},
         },
         {
         "region_name": "Matabeleland North",
         "region_code": "ZWE526",
         "infected": {!! $matebNorth->sum('infections') !!},
+        "deaths": {!! $matebNorth->sum('deaths') !!},
+        "recoveries": {!! $matebNorth->sum('recovered') !!},
         },
         {
         "region_name": "Midlands",
         "region_code": "ZWE527",
         "infected": {!! $midlands->sum('infections') !!},
+        "deaths": {!! $midlands->sum('deaths') !!},
+        "recoveries": {!! $midlands->sum('recovered') !!},
         },
         {
         "region_name": "Mashonaland East",
         "region_code": "ZWE528",
         "infected": {!! $mashEast->sum('infections') !!},
+        "deaths": {!! $mashEast->sum('deaths') !!},
+        "recoveries": {!! $mashEast->sum('recovered') !!},
         },
         {
         "region_name": "Manicaland",
         "region_code": "ZWE529",
         "infected": {!! $manica->sum('infections') !!},
+        "deaths": {!! $manica->sum('deaths') !!},
+        "recoveries": {!! $manica->sum('recovered') !!},
         },
         {
         "region_name": "Matabeleland",
         "region_code": "ZWE530",
         "infected": {!! $matebe->sum('infections') !!},
+        "deaths": {!! $matebe->sum('deaths') !!},
+        "recoveries": {!! $matebe->sum('recovered') !!},
         },
         {
         "region_name": "Bulawayo",
         "region_code": "ZWE531",
         "infected": {!! $byo->sum('infections') !!},
+        "deaths": {!! $byo->sum('deaths') !!},
+        "recoveries": {!! $byo->sum('recovered') !!},
         },
         {
         "region_name": "Masvingo",
         "region_code": "ZWE532",
         "infected": {!! $masvingo->sum('infections') !!},
+        "deaths": {!! $masvingo->sum('deaths') !!},
+        "recoveries": {!! $masvingo->sum('recovered') !!},
         },
         {
         "region_name": "Mashonaland West",
         "region_code": "ZWE533",
         "infected": {!! $mashWest->sum('infections') !!},
+        "deaths": {!! $mashWest->sum('deaths') !!},
+        "recoveries": {!! $mashWest->sum('recovered') !!},
         },
         ];
 
 
         var temp_array= regions.map(function(item){
         return item.infected;
+        });
+        var temp_array= regions.map(function(item){
+        return item.deaths;
+        });
+        var temp_array= regions.map(function(item){
+        return item.recoveries;
         });
         var highest_value = Math.max.apply(Math, temp_array);
 
@@ -323,7 +367,9 @@
         var region_data=$(this).data('region');
         $('<div class="info_panel">'+
             region_data.region_name + '<br>' +
-            'Infected: ' + region_data.infected.toLocaleString("en-UK") +
+            'Infected: ' +  region_data.infected.toLocaleString("en-UK") + '<br>' +
+            'Region: ' +  region_data.deaths + '<br>' +
+            'Region: ' +  region_data.recoveries + '<br>' +
             '</div>'
          )
         .appendTo('body');
@@ -336,7 +382,7 @@
             mouseY = e.pageY; //Y coordinates of mouse
 
         $('.info_panel').css({
-            top: mouseY-50,
+            top: mouseY-100,
             left: mouseX - ($('.info_panel').width()/2)
         });
         });

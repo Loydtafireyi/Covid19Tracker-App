@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class FocusAreaDonor extends Model
 {
-    protected $fillable ['focusarea_id', 'donorname_id', 'recieved_id'];
+    protected $fillable ['focus_area_id', 'donor_name_id', 'recieved_id'];
 
-    public function focusarea()
+    public function focus_area()
     {
     	return $this->belongsTo(FocusArea::class);
     }
 
-    public function donorname()
+    public function donor_name()
     {
     	return $this->belongsTo(DonorName::class);
     }

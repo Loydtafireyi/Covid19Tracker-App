@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Pledges;
+use App\Pledge;
 use App\DonorName;
 use Illuminate\Http\Request;
 use App\Http\Requests\Pledges\PledgesTypeRequest;
@@ -16,7 +16,7 @@ class PledgeController extends Controller
      */
     public function index()
     {
-        $pledges = Pledges::all();
+        $pledges = Pledge::all();
 
         return view('admin.pledges.index', compact('pledges'));
     }
@@ -41,10 +41,14 @@ class PledgeController extends Controller
      */
     public function store(PledgesTypeRequest $request)
     {
-        Pledges::create([
+        Pledge::create([
             'amount' => $request->amount,
-            'donorname_id' => $request->amount
+            'donor_name_id' => $request->donor_name_id
         ]);
+
+        session()->flash('success', $request->amount . ' added successfully');
+
+        return redirect(route('pledge.index'));
     }
 
     /**
@@ -53,7 +57,7 @@ class PledgeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Pledges $pledge)
+    public function show(Pledge $pledge)
     {
         return ($pledge);
     }
@@ -64,7 +68,7 @@ class PledgeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pledges $pledge)
+    public function edit(Pledge $pledge)
     {
         $donornames = DonorName::all();
 
@@ -95,7 +99,7 @@ class PledgeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pledges $pledge)
+    public function destroy(Pledge $pledge)
     {
         $pledge->delete();
 

@@ -15,13 +15,13 @@ class CreateFocusAreaDonorsTable extends Migration
     {
         Schema::create('focus_area_donors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('focusarea_id');
-            $table->unsignedBigInteger('donorname_id');
+            $table->unsignedBigInteger('focus_area_id');
+            $table->unsignedBigInteger('donor_name_id');
             $table->unsignedBigInteger('recieved_id');
             $table->timestamps();
 
-            $table->index('focusarea_id');
-            $table->index('donorname_id');
+            $table->index('focus_area_id');
+            $table->index('donor_name_id');
             $table->index('recieved_id');
         });
     }

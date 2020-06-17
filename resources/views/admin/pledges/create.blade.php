@@ -12,8 +12,8 @@
 			@endif
 			<div class="row">
 				<div class="col">
-					<label for="donorname_id">Donor Name</label>
-					<select id="donorname_id" name="donorname_id" class="custom-select">
+					<label for="donor_name_id">Donor Name</label>
+					<select id="donor_name_id" name="donor_name_id" class="custom-select">
 						<option selected disabled value="">Choose...</option>
 						@foreach($donornames as $donor)
 						<option value="{{$donor->id}}">{{$donor->name}}</option>

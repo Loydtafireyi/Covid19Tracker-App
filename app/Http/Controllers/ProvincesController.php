@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Country;
 use App\Province;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class ProvincesController extends Controller
      */
     public function create()
     {
-        return view('admin.provinces.create');
+        $countries = Country::all();
+        return view('admin.provinces.create', compact('countries'));
     }
 
     /**
@@ -41,7 +43,9 @@ class ProvincesController extends Controller
         ]);
 
         Province::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'country_id' => $request->country_id,
+            'code' => $request->code
         ]);
 
         session()->flash('success', $request->name . ' Province added successfully!');
@@ -80,7 +84,7 @@ class ProvincesController extends Controller
      */
     public function update(Request $request, Province $province)
     {
-        $data = $request->only(['name']);
+        $data = $request->all();
 
         $province->update($data);
 

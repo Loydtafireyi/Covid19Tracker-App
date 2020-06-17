@@ -17,13 +17,17 @@ Track your local covid19 cases, deaths, recoveries and doner funds. You have tot
 - run `` php artisan key:generate ``.
 - set up your database in the .env
 - run `` php artisan migrate ``.
+- run `` php artisan db:seed ``.
 - [Then navigate back to App\Providers\AppServiceProvder  then uncomment out all the View::share in the boot method].
 - run `` php artisan serve ``.
+
+#Admin Credentials
+- admin@admin.com p/s admin123
 
 
 ## Demo
 
- [Working Demon](http://covid19zim.online/)
+ [Working Demo](http://covid19zim.online/)
 
 
 ## Covi19 Tracker Features

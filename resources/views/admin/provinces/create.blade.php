@@ -11,8 +11,22 @@
 				@method('PUT')
 			@endif
 			<div class="form-group">
+				<label for="country_id">Country</label>
+				
+				<select id="country_id" name="country_id" class="custom-select">
+					<option selected disabled value="">Choose...</option>
+					@foreach($countries as $country)
+						<option value="{{$country->id}}">{{$country->country}}</option>
+					@endforeach
+				</select>
+			</div>
+			<div class="form-group">
 				<label for="name">Add Province</label>
 				<input type="text" name="name" id="name" class="form-control" value="{{isset($province) ? $province->name : '' }}">
+			</div>
+			<div class="form-group">
+				<label for="code">Province Code</label>
+				<input type="text" name="code" id="code" class="form-control" value="{{isset($province) ? $province->code : '' }}">
 			</div>
 			<div class="form-group">
 				<button type="submit" class="btn {{isset($province) ? 'btn-danger' : 'btn-success' }}">{{isset($province) ? 'Update Province' : 'Add Province' }}</button>

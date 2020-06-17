@@ -5,9 +5,9 @@ namespace App;
 use App\DonorName;
 use Illuminate\Database\Eloquent\Model;
 
-class Recieved extends Model
+class Pledge extends Model
 {
-    protected $fillable = ['amount', 'donor_name_id'];
+    protected $fillable = ['donor_name_id', 'amount'];
 
     public function donor_name()
     {

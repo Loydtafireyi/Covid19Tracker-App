@@ -41,6 +41,10 @@ class DonorTypeController extends Controller
         DonorType::create([
             'type' => $request->type
         ]);
+
+        session()->flash('success', $request->type . ' donor type added successfully');
+
+        return redirect(route('donor-type.index'));
     }
 
     /**

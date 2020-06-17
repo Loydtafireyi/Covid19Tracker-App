@@ -13,7 +13,7 @@
 <div class="card">
 	<div class="card-header">
 		<span class="text-uppercase">Pledges</span>
-		<a class="btn btn-dark btn-md float-right" href="{{route('pledge.create')}}">Add Focus Area</a>
+		<a class="btn btn-dark btn-md float-right" href="{{route('pledge.create')}}">Add Pladge</a>
 	</div>
 	<div class="body">
 		<table class="table table-dark table-bordered table-hover">

@@ -5,9 +5,13 @@ namespace App\Providers;
 use View;
 use App\Test;
 use App\Death;
+use App\Pledge;
+use App\Recieved;
 use App\Province;
 use App\Infection;
 use App\Recovered;
+use App\DonorType;
+use App\DonorName;
 use App\Quarantine;
 use App\RequestAmbulance;
 use Illuminate\Support\ServiceProvider;
@@ -38,5 +42,9 @@ class AppServiceProvider extends ServiceProvider
         View::share('deaths', Death::all());
         View::share('tests', Test::all());
         View::share('quarantines', Quarantine::all());
+        View::share('pledges', Pledge::all());
+        View::share('recieved', Recieved::all());
+        View::share('donortypes', DonorType::all());
+        View::share('donorname', DonorName::all());
     }
 }

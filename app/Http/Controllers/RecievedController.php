@@ -43,8 +43,12 @@ class RecievedController extends Controller
     {
         Recieved::create([
             'amount' => $request->amount,
-            'donorname_id' => $request->donorname_id
+            'donor_name_id' => $request->donor_name_id
         ]);
+
+        session()->flash('success', $request->amount . ' added successfully');
+
+        return redirect(route('recieved.index'));
     }
 
     /**

@@ -28,6 +28,8 @@
         <!-- Responsive Table css -->
         <link href="{{ asset('frontend/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
 
+        @yield('css')
+
     </head>
 
     <style type="text/css">
@@ -131,7 +133,7 @@
                                     <span>Lock Screen</span>
                                 </a>
     
-                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-divider"></div> 
     
                                 <!-- item-->
                                 <a href="{{ route('logout') }}" class="dropdown-item notify-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -179,11 +181,15 @@
                         <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="/"><i class="fas fa-chart-pie"></i>Covid19 Statistics Overview</a>
+                                <a href="/"><i class="fas fa-chart-pie"></i>Cases Stats Overview</a>
+                            </li>
+
+                             <li class="has-submenu">
+                                <a href="{{ route('funds') }}"><i class="fas fa-search-dollar"></i>Funds Tracker</a>
                             </li>
 
                             <li class="has-submenu">
-                                <a href="{{ route('provinces') }}"> <i class="fas fa-chart-line"></i>Zimbabwe Statistcs By Provinces</a>
+                                <a href="{{ route('provinces') }}"> <i class="fas fa-chart-line"></i>Stats By Provinces</a>
                             </li>
 
                             <li class="has-submenu">
@@ -232,24 +238,9 @@
         <div class="wrapper">
             <div class="container-fluid">
 
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Zimbabwe</a></li>
-                                    <li class="breadcrumb-item active">Covid19 Statistics</li>
-                                </ol>
-                            </div>
-                            <h4 class="page-title">Zimbabwe Covid19 Statistics</h4>
-                        </div>
-                    </div>
-                </div>     
-                <!-- end page title --> 
+            @yield('page_title')
 
-
-                @yield('content')
+            @yield('content')
 
         <!-- Whatsapp support button -->
         <a href="{{ env('WHATSAPP') }}" class="float" target="_blank"><i class="fa fa-whatsapp my-float"></i>
@@ -260,7 +251,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        2020 &copy; Covid App By <a href="{{ env('WHATSAPP') }}">Loyd & Eloquent Geeks</a> 
+                        2020 &copy; Covid App By <a href="{{ env('WHATSAPP') }}">Eloquent Geeks & Blck</a> 
 
                     </div>
                     <div class="col-md-6">
@@ -298,5 +289,8 @@
 
         <!-- Table scripts -->
         @yield('table-scripts')
+
+        @yield('scripts')
+
     </body>
 </html>

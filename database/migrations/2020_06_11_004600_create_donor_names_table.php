@@ -16,11 +16,11 @@ class CreateDonorNamesTable extends Migration
         Schema::create('donor_names', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('donortype_id');
+            $table->unsignedBigInteger('donor_type_id');
             $table->unsignedBigInteger('country_id');
             $table->timestamps();
 
-            $table->index('donortype_id');
+            $table->index('donor_type_id');
             $table->index('country_id');
         });
     }

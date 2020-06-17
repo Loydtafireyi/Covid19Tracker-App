@@ -43,7 +43,6 @@ class InfectionsController extends Controller
             'province_id' => $request->province_id,
             'date_reported' => $request->date_reported,
             'infections' => $request->infections,
-            'region_code' => $request->region_code
         ]);
 
         session()->flash('success', "$request->infections Infections reported on $request->date_reported have been successfully added.");

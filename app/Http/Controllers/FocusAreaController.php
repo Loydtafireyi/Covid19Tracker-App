@@ -41,6 +41,10 @@ class FocusAreaController extends Controller
         FocusArea::create([
             'name' => $request->name
         ]);
+
+        session()->flash('success', $request->name . ' focus area added successfully');
+
+        return redirect(route('focus-area.index'));
     }
 
     /**

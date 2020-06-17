@@ -1,12 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700");
+
 .map{
   width: 75%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin: auto;
 }
 
 .map g {
-  stroke-width: 1;
+  stroke-width: 1px;
 }
 
 .map g:hover {
@@ -15,17 +19,20 @@
 }
 
 .info_panel {
-  background-color: white;
+  background-color: #fff;
+  border: 2px solid #eee;
+  border-radius: 5px;
   color: black;  
-  padding: .3em;
+  padding: .4em;
   font-size: .8em;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Roboto, Karla;
   position: absolute;
 }
 
 .info_panel::first-line {
    font-weight: bold; 
-   color: black;  
+   color: black; 
+   text-transform: uppercase; 
 }
 
 @media only screen

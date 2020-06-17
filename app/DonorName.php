@@ -2,29 +2,35 @@
 
 namespace App;
 
+use App\Country;
+use App\Pledge;
+use App\Recieved;
+use App\DonorType;
 use Illuminate\Database\Eloquent\Model;
 
 class DonorName extends Model
 {
-    protected $fillable = ['name', 'country_id', 'donortype_id'];
+    protected $fillable = ['name', 'country_id', 'donor_type_id'];
+
+    protected $with = ['pledges'];
 
     public function country()
     {
     	return $this->belongsTo(Country::class);
     }
 
-     public function donortype()
+     public function donor_type()
     {
     	return $this->belongsTo(DonorType::class);
     }
 
-    public function pledge()
+    public function pledges()
     {
     	return $this->hasMany(Pledge::class);
     }
 
-    public function recieved()
+    public function recieveds()
     {
-    	return $this->hasMany(Recived::class);
+    	return $this->hasMany(Recieved::class);
     }
 }

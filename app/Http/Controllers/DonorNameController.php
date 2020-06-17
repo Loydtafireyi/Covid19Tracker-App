@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Country;
 use App\DonorName;
-use App\Donortype;
+use App\DonorType;
 use Illuminate\Http\Request;
 use App\Http\Requests\DonorName\CreateDonorNameTypeRequest;
 
@@ -48,8 +48,12 @@ class DonorNameController extends Controller
         DonorName::create([
             'name' => $request->name,
             'country_id' => $request->country_id,
-            'donortype_id' => $request->donortype_id
+            'donor_type_id' => $request->donor_type_id
         ]);
+
+        session()->flash('success', $request->name . ' donor name added successfully');
+
+        return redirect(route('donor-name.index'));
     }
 
     /**
@@ -58,8 +62,10 @@ class DonorNameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(DonorName $donorname)
+    public function show($id)
     {
+        $donorname = DonorName::findOrFail($id);
+
         return ($donorname);
     }
 
@@ -71,11 +77,11 @@ class DonorNameController extends Controller
      */
     public function edit($id)
     {
-        $donorname = DonorName::findOrFail($id);
-
-        $donortypes = Donortype::all();
+        $donortypes = DonorType::all();
 
         $countries = Country::all();
+
+        $donorname = DonorName::findOrFail($id);
 
         return view('admin.donornames.create', compact('donorname', 'donortypes', 'countries'));
     }

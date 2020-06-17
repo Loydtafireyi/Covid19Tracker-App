@@ -13,7 +13,7 @@
 <div class="card">
 	<div class="card-header">
 		<span class="text-uppercase">Recieved Amount</span> 
-		<a class="btn btn-dark btn-md float-right" href="{{route('focus-area.create')}}">Add Recieved Amount</a>
+		<a class="btn btn-dark btn-md float-right" href="{{route('recieved.create')}}">Add Recieved Amount</a>
 	</div>
 	<div class="body">
 		<table class="table table-dark table-bordered table-hover">
