@@ -38,6 +38,8 @@ Route::resource('admin/recieved', 'RecievedController');
 Route::resource('RequestAmbulance', 'RequestAmbulancesController')->middleware('auth');
 Route::get('stats-by-province', 'StatsByProvinceController@index')->name('provinces');
 Route::get('funds/tracker', 'FundsTrackerController@index')->name('funds');
+Route::get('privacy/policy', 'PrivacyPolicyController@index')->name('privacy');
+Route::get('terms', 'TermsController@index')->name('terms');
 Route::get('zimbabwe-covid19-isolation-centres', 'StatsByProvinceController@isolation')->name('isolation');
 Route::resource('self-positive', 'SelfPositiveController');
 

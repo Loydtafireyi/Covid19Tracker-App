@@ -1,4 +1,4 @@
-@auth
+@if(auth()->check())
 
 @if(auth()->user()->isAdmin())
 <!doctype html>
@@ -94,6 +94,13 @@
                     <div class="col-md-3">
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{route('countries.index')}}" class="text-decoration-none">
+                                    <i class="fas fa-globe-africa text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Countries</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
                                 <a href="{{route('provinces.index')}}" class="text-decoration-none"> 
                                     <i class="fas fa-map-marker-alt text-white"></i>
                                     <span class="text-white text-decoration-none text-uppercase">Provinces</span>
@@ -148,13 +155,6 @@
                                 <a href="{{route('survey.index')}}" class="text-decoration-none">
                                     <i class="fas fa-poll text-white"></i>
                                     <span class="text-white text-decoration-none text-uppercase">Survey</span>
-                                </a>
-                                <span class="text-white"></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
-                                <a href="{{route('countries.index')}}" class="text-decoration-none">
-                                    <i class="fas fa-globe-africa text-white"></i>
-                                    <span class="text-white text-decoration-none text-uppercase">Countries</span>
                                 </a>
                                 <span class="text-white"></span>
                             </li>
@@ -218,4 +218,5 @@
 
 @endif
 
-@endauth
+@endif
+

@@ -44,7 +44,7 @@
 
                <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-warning badge-pill float-left mt-3">{{ $infections->sum('infections') / $tests->sum('tests') * 100  }} % <i class="mdi mdi-trending-up"></i> </span>
+                    <span class="badge badge-warning badge-pill float-left mt-3">{{ number_format($infections->sum('infections') / $tests->sum('tests') * 100, 2)  }} % <i class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1"> {{ $infections->sum('infections') }} </h2>
                     <p class="text-muted mb-3">Infected</p>
                 </div>
@@ -83,7 +83,7 @@
 
              <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-danger badge-pill float-left mt-3">{{ $deaths->sum('deaths') / $infections->sum('infections') * 100 }} % <i class="mdi mdi-trending-up"></i> </span>
+                    <span class="badge badge-danger badge-pill float-left mt-3">{{ number_format($deaths->sum('deaths') / $infections->sum('infections') * 100, 2) }}  % <i class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1"> {{ $deaths->sum('deaths') }} </h2>
                     <p class="text-muted mb-3">Deaths</p>
                 </div>
@@ -121,14 +121,14 @@
 
             <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-success badge-pill float-left mt-3">{{ $recoveries->sum('recovered') / $infections->sum('infections') * 100 }} % <i class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1"> {{ $recoveries->sum('recovered') }} </h2>
+                    <span class="badge badge-success badge-pill float-left mt-3">{{ number_format($recovered->sum('recovered') / $infections->sum('infections') * 100, 2) }} % <i class="mdi mdi-trending-up"></i> </span>
+                    <h2 class="font-weight-normal mb-1"> {{ $recovered->sum('recovered') }} </h2>
                     <p class="text-muted mb-3">Recoveries</p>
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
                     <div class="progress-bar bg-success" role="progressbar"
                             aria-valuenow="77" aria-valuemin="100" aria-valuemax="100"
-                            style="width: 6.8%;">
+                            style="width: 100.8%;">
                         <span class="sr-only">100% Complete</span>
                     </div>
                 </div>
@@ -167,8 +167,8 @@
                 <div class="progress progress-bar-alt-primary progress-sm">
                     <div class="progress-bar bg-primary" role="progressbar"
                             aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
-                            style="width: 2.1%;">
-                        <span class="sr-only">2.1% Complete</span>
+                            style="width: 100.1%;">
+                        <span class="sr-only">100.1% Complete</span>
                     </div>
                 </div>
             </div>
@@ -255,6 +255,45 @@
             <!-- <div id="world-map-markers" style="height: 420px"></div> -->
         </div>
     </div><!-- end col -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card-box">
+                <h4 class="mt-0 header-title">Provinces</h4>
+                <p class="text-muted font-14 mb-3">
+                    Zimbabwe Covid-19 statistics by Province. Download and analyze the data as you with. Stay safe and practice hygiene plus social distancing. We thrive to give you valid and accurate data, for more info hit the whatsapp button.
+                </p>
+
+                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
+                    <thead>
+                    <tr>
+                        <th>Provinces</th>
+                        <th>Tests</th>
+                        <th>Cases</th>
+                        <th>Deaths</th>
+                        <th>Recovered</th>
+                        <th>Active Cases</th>
+                        <th>Infection Rate</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach($provinces as $province)
+                        <tr>
+                            <td>{{ $province->name }}</td>
+                            <td>{{ $province->tests->sum('tests') }}</td>
+                            <td>{{ $province->infections->sum('infections') }}</td>
+                            <td>{{ $province->deaths->sum('deaths') }}</td>
+                            <td>{{ $province->recovered->sum('recovered') }}</td>
+                            <td>{{ $province->infections->sum('infections') - $province->recovered->sum('recovered') - $province->deaths->sum('deaths')  }}</td>
+                            <td>{{ number_format($province->infections->sum('infections') / $province->tests->sum('tests') * 100 , 2) }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
 </div>
 <!-- end row -->
 
@@ -268,79 +307,9 @@
 
 @section('map-scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript">
-        var regions=[
-        {
-        "region_name": "Mashonaland Central",
-        "region_code": "ZWE524",
-        "infected": {!! $mashCentral->sum('infections') !!},
-        "deaths": {!! $mashCentral->sum('deaths') !!},
-        "recoveries": {!! $mashCentral->sum('recovered') !!},
-        },
-        {
-        "region_name": "Harare",
-        "region_code": "ZWE525",
-        "infected":  {!! $harare->sum('infections') !!},
-        "deaths": {!! $harare->sum('deaths') !!},
-        "recoveries": {!! $harare->sum('recovered') !!},
-        },
-        {
-        "region_name": "Matabeleland North",
-        "region_code": "ZWE526",
-        "infected": {!! $matebNorth->sum('infections') !!},
-        "deaths": {!! $matebNorth->sum('deaths') !!},
-        "recoveries": {!! $matebNorth->sum('recovered') !!},
-        },
-        {
-        "region_name": "Midlands",
-        "region_code": "ZWE527",
-        "infected": {!! $midlands->sum('infections') !!},
-        "deaths": {!! $midlands->sum('deaths') !!},
-        "recoveries": {!! $midlands->sum('recovered') !!},
-        },
-        {
-        "region_name": "Mashonaland East",
-        "region_code": "ZWE528",
-        "infected": {!! $mashEast->sum('infections') !!},
-        "deaths": {!! $mashEast->sum('deaths') !!},
-        "recoveries": {!! $mashEast->sum('recovered') !!},
-        },
-        {
-        "region_name": "Manicaland",
-        "region_code": "ZWE529",
-        "infected": {!! $manica->sum('infections') !!},
-        "deaths": {!! $manica->sum('deaths') !!},
-        "recoveries": {!! $manica->sum('recovered') !!},
-        },
-        {
-        "region_name": "Matabeleland",
-        "region_code": "ZWE530",
-        "infected": {!! $matebe->sum('infections') !!},
-        "deaths": {!! $matebe->sum('deaths') !!},
-        "recoveries": {!! $matebe->sum('recovered') !!},
-        },
-        {
-        "region_name": "Bulawayo",
-        "region_code": "ZWE531",
-        "infected": {!! $byo->sum('infections') !!},
-        "deaths": {!! $byo->sum('deaths') !!},
-        "recoveries": {!! $byo->sum('recovered') !!},
-        },
-        {
-        "region_name": "Masvingo",
-        "region_code": "ZWE532",
-        "infected": {!! $masvingo->sum('infections') !!},
-        "deaths": {!! $masvingo->sum('deaths') !!},
-        "recoveries": {!! $masvingo->sum('recovered') !!},
-        },
-        {
-        "region_name": "Mashonaland West",
-        "region_code": "ZWE533",
-        "infected": {!! $mashWest->sum('infections') !!},
-        "deaths": {!! $mashWest->sum('deaths') !!},
-        "recoveries": {!! $mashWest->sum('recovered') !!},
-        },
-        ];
+    <script>
+
+        var regions = @json($provincies);
 
 
         var temp_array= regions.map(function(item){
@@ -368,8 +337,8 @@
         $('<div class="info_panel">'+
             region_data.region_name + '<br>' +
             'Infected: ' +  region_data.infected.toLocaleString("en-UK") + '<br>' +
-            'Region: ' +  region_data.deaths + '<br>' +
-            'Region: ' +  region_data.recoveries + '<br>' +
+            'Deaths: ' +  region_data.deaths + '<br>' +
+            'Recovered: ' +  region_data.recoveries + '<br>' +
             '</div>'
          )
         .appendTo('body');

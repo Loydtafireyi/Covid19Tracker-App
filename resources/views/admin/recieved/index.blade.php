@@ -18,6 +18,7 @@
 	<div class="body">
 		<table class="table table-dark table-bordered table-hover">
 			<thead>
+				<th>Donor Name</th>
 				<th>Amount</th>
 				<th>Edit</th>
 				<th>Delete</th>
@@ -25,6 +26,7 @@
 			<tbody>
 				@foreach($recieved as $recieve)
 				<tr>
+					<th>{{ $recieve->donor_name->name }}</th>
 					<th>{{ $recieve->amount }}</th>
 					<th>
 						<a class="btn btn-primary btn-sm" href="{{ route('recieved.edit', $recieve->id) }}"> Edit

@@ -18,6 +18,8 @@
 		<table class="table table-hover table-dark table-bordered m-0">
 			<thead>
 				<th>Province</th>
+				<th>Country</th>
+				<th>Province Code</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</thead>
@@ -25,6 +27,8 @@
 				@foreach($provinces as $province)
 				<tr>
 					<td>{{$province->name}}</td>
+					<td>{{$province->country->country}}</td>
+					<td>{{$province->code}}</td>
 					<td>
 						<a href="{{route('provinces.edit', $province->id)}}" class="btn btn-primary btn-sm">Edit</a>
 					</td>

@@ -27,7 +27,6 @@ class CreateInfectionsRequest extends FormRequest
             'province_id' => 'required',
             'date_reported' => 'required',
             'infections' => 'required',
-            'region_code' => 'required'
         ];
     }
 }

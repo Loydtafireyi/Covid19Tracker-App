@@ -41,4 +41,9 @@ class Province extends Model
     {
         return $this->hasMany(Quarantine::class);
     }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

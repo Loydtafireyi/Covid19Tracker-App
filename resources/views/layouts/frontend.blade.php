@@ -256,7 +256,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="javascript:void(0);">About Us</a>
+                            <a href="{{ route('terms') }}">Terms & Conditions</a>
+                            <a href="{{ route('privacy') }}">Privacy Policy</a>
                             <a href="{{ env('WHATSAPP') }}">Help</a>
                             <a href="{{ env('WHATSAPP') }}">Contact Us</a>
                         </div>

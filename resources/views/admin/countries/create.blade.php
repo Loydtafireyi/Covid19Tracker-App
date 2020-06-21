@@ -13,6 +13,10 @@
 				<div class="col">
 					<label for="country">Country</label>
 					<input type="text" name="country" id="country" class="form-control" value="{{ isset($country) ? $country->country : '' }}">
+					@error('country')
+						<div class="alert alert-danger mt-1" role="alert">
+							<strong>{{ $message }}</strong>
+					@endif
 				</div>
 				<div class="form-group ml-3 mt-3 mb-0">
 					<button class="btn btn-success" type="submit">{{ isset($country) ? 'Update Country' : 'Add Country' }}</button>

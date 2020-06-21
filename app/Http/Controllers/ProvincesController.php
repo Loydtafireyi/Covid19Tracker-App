@@ -39,7 +39,9 @@ class ProvincesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'country_id' => 'required',
+            'code' => 'required'
         ]);
 
         Province::create([

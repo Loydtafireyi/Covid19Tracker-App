@@ -18,6 +18,7 @@
 	<div class="body">
 		<table class="table table-dark table-bordered table-hover">
 			<thead>
+				<th>Donor Name</th>
 				<th>Amount</th>
 				<th>Edit</th>
 				<th>Delete</th>
@@ -25,6 +26,7 @@
 			<tbody>
 				@foreach($pledges as $pledge)
 				<tr>
+					<th>{{ $pledge->donor_name->name }}</th>
 					<th>{{ $pledge->amount }}</th>
 					<th>
 						<a class="btn btn-primary btn-sm" href="{{ route('pledge.edit', $pledge->id) }}"> Edit

@@ -12,19 +12,17 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-    	$deaths = Death::all();
-    	$infections = Infection::all();
-    	$recoveries = Recovered::all();
-    	$mashCentral = Infection::where('province_id', 1);
-    	$harare = Infection::where('province_id', 2);
-    	$matebNorth = Infection::where('province_id', 3);
-    	$midlands = Infection::where('province_id', 4);
-    	$mashEast = Infection::where('province_id', 5);
-    	$manica = Infection::where('province_id', 6);
-    	$matebe = Infection::where('province_id', 7);
-    	$byo = Infection::where('province_id', 8);
-    	$masvingo = Infection::where('province_id', 9);
-    	$mashWest = Infection::where('province_id', 10);
-    	return view('welcome', compact('deaths', 'infections', 'recoveries', 'mashCentral', 'mashEast', 'mashCentral', 'harare', 'matebNorth', 'midlands', 'manica', 'matebe', 'byo', 'masvingo', 'mashWest'));
+
+        $provincies = Province::with(['infections', 'deaths', 'recovered'])->get()->map(function ($province) {
+            return [
+                'region_name' => $province->name,
+                'region_code' => $province->code,
+                'infected' => $province->infections->sum('infections'),
+                'deaths' => $province->deaths->sum('deaths'),
+                'recoveries' => $province->recovered->sum('recovered')
+            ];
+        })->toArray();
+
+        return view('welcome', compact('provincies'));
     }
 }

@@ -23,12 +23,12 @@
 					@endforeach
 				</select>
 			</div>
-			<div class="form-group">
+			<div class="form-group"> 
 				<label for="date_reported">Date Reported</label>
 				<input type="date" name="date_reported" id="date_reported" class="form-control" value="{{isset($recover) ? $recover->date_reported : ''}}">
 			</div>
 			<div class="form-group">
-				<label for="recover">Recovered</label>
+				<label for="recovered">Recovered</label>
 				<input type="number" name="recovered" id="recovered" class="form-control" value="{{isset($recover) ? $recover->recovered : ''}}">
 			</div>	
 			<div class="form-group">

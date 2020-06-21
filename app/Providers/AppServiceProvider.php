@@ -14,6 +14,7 @@ use App\DonorType;
 use App\DonorName;
 use App\Quarantine;
 use App\RequestAmbulance;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -46,5 +47,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('recieved', Recieved::all());
         View::share('donortypes', DonorType::all());
         View::share('donorname', DonorName::all());
+
+        Schema::defaultStringLength(191);
     }
 }

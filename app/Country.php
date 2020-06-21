@@ -12,4 +12,9 @@ class Country extends Model
     {
     	return $this->hasMany(DonorName::class);
     }
+
+    public function provinces()
+    {
+    	return $this->hasMany(Province::class);
+    }
 }
