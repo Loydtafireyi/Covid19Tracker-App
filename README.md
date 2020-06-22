@@ -9,7 +9,7 @@ Track your local covid19 cases, deaths, recoveries and doner funds. You have tot
 
 # Installation
 
-- [run `` git clone https://github.com/Loydtafireyi/Covid19Tracker-App.git ``](http://covid19zim.online/).
+- [run `` git clone https://github.com/Loydtafireyi/Covid19Tracker-App.git ``](https://covid19zim.online/funds/tracker).
 - [Then navigate to App\Providers\AppServiceProvder and comment out all the View::share in the boot method].
 - run ``composer update `` .
 - run `` npm install ``.
