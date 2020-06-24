@@ -12,36 +12,38 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('stats-by-province', 'StatsByProvinceController@index')->name('provinces');
+Route::get('funds/tracker', 'FundsTrackerController@index')->name('funds');
+Route::get('privacy/policy', 'PrivacyPolicyController@index')->name('privacy');
+Route::get('terms', 'TermsController@index')->name('terms');
+Route::get('zimbabwe-covid19-isolation-centres', 'StatsByProvinceController@isolation')->name('isolation');
+Route::view('/about',  'about');
 
 Auth::routes();
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
-Route::get('admin/home', 'HomeController@index')->name('home')->middleware('admin');
+Route::middleware(['auth', 'admin'])->group(function ()
+{
+	Route::get('admin/home', 'HomeController@index')->name('home')->middleware('admin');
+	Route::resource('admin/provinces', 'ProvincesController');
+	Route::resource('admin/infections', 'InfectionsController');
+	Route::resource('admin/deaths', 'DeathsController');
+	Route::resource('admin/recovered', 'RecoveredController');
+	Route::resource('admin/tests', 'TestsController');
+	Route::resource('admin/quarantine', 'QuarantineController');
+	Route::resource('admin/survey', 'SurveyController');
+	Route::resource('admin/countries', 'CountriesController');
+	Route::resource('admin/donor-type', 'DonorTypeController');
+	Route::resource('admin/focus-area', 'FocusAreaController');
+	Route::resource('admin/donor-name', 'DonorNameController');
+	Route::resource('admin/pledge', 'PledgeController');
+	Route::resource('admin/recieved', 'RecievedController');
+	Route::resource('admin/products', 'ProductController');
+	Route::resource('admin/spent', 'SpentController');
+});
 
-Route::resource('admin/provinces', 'ProvincesController')->middleware('admin');
-Route::resource('admin/infections', 'InfectionsController')->middleware('admin');
-Route::get('admin/RequestAmbulance/{requestAmbulance}/assisted', 'RequestAmbulancesController@assisted')->name('RequestAmbulance.assisted')->middleware('admin');
-Route::resource('admin/deaths', 'DeathsController')->middleware('admin');
-Route::resource('admin/recovered', 'RecoveredController')->middleware('admin');
-Route::resource('admin/tests', 'TestsController')->middleware('admin');
-Route::resource('admin/quarantine', 'QuarantineController');
-Route::resource('admin/survey', 'SurveyController');
-Route::resource('admin/countries', 'CountriesController');
-Route::resource('admin/donor-type', 'DonorTypeController');
-Route::resource('admin/focus-area', 'FocusAreaController');
-Route::resource('admin/donor-name', 'DonorNameController');
-Route::resource('admin/pledge', 'PledgeController');
-Route::resource('admin/recieved', 'RecievedController');
-
-Route::resource('RequestAmbulance', 'RequestAmbulancesController')->middleware('auth');
-Route::get('stats-by-province', 'StatsByProvinceController@index')->name('provinces');
-Route::get('funds/tracker', 'FundsTrackerController@index')->name('funds');
-Route::get('privacy/policy', 'PrivacyPolicyController@index')->name('privacy');
-Route::get('terms', 'TermsController@index')->name('terms');
-Route::get('zimbabwe-covid19-isolation-centres', 'StatsByProvinceController@isolation')->name('isolation');
 Route::resource('self-positive', 'SelfPositiveController');
-
 Route::resource('donate', 'DonateController');
 Route::get('donate', 'DonateController@paynow')->name('paynow');

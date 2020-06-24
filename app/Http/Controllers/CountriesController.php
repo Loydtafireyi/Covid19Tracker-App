@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Country;
+use App\Province;
 use Illuminate\Http\Request;
 use App\Http\Requests\Country\CreateCountryRequest;
 
@@ -94,6 +95,11 @@ class CountriesController extends Controller
      */
     public function destroy(Country $country)
     {
+        if(Province::count() > 0 ) {
+            session()->flash('error', 'Take it easy, you cannot delete country because it has some Provinces!');
+
+            return redirect(route('countries.index'));
+        }
         $country->delete();
 
         session()->flash('success', $country->country . ' deleted successfully!');

@@ -15,7 +15,7 @@ class DonorTypeController extends Controller
      */
     public function index()
     {
-        $donortypes = DonorType::all();
+        $donortypes = DonorType::paginate(5);
 
         return view('admin.donortypes.index', compact('donortypes'));
     }

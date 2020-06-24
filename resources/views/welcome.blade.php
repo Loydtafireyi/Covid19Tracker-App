@@ -44,7 +44,12 @@
 
                <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-warning badge-pill float-left mt-3">{{ number_format($infections->sum('infections') / $tests->sum('tests') * 100, 2)  }} % <i class="mdi mdi-trending-up"></i> </span>
+                    <span class="badge badge-warning badge-pill float-left mt-3">
+                        @if($tests->count() > 0)
+                            {{ number_format($infections->sum('infections') / $tests->sum('tests') * 100, 2)  }} % 
+                        @endif
+                        <i class="mdi mdi-trending-up"></i> 
+                    </span>
                     <h2 class="font-weight-normal mb-1"> {{ $infections->sum('infections') }} </h2>
                     <p class="text-muted mb-3">Infected</p>
                 </div>
@@ -83,7 +88,12 @@
 
              <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-danger badge-pill float-left mt-3">{{ number_format($deaths->sum('deaths') / $infections->sum('infections') * 100, 2) }}  % <i class="mdi mdi-trending-up"></i> </span>
+                    <span class="badge badge-danger badge-pill float-left mt-3">
+                        @if($infections->count() > 0)
+                            {{ number_format($deaths->sum('deaths') / $infections->sum('infections') * 100, 2) }}  % 
+                        @endif
+                        <i class="mdi mdi-trending-up"></i> 
+                    </span>
                     <h2 class="font-weight-normal mb-1"> {{ $deaths->sum('deaths') }} </h2>
                     <p class="text-muted mb-3">Deaths</p>
                 </div>
@@ -121,7 +131,12 @@
 
             <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-success badge-pill float-left mt-3">{{ number_format($recovered->sum('recovered') / $infections->sum('infections') * 100, 2) }} % <i class="mdi mdi-trending-up"></i> </span>
+                    <span class="badge badge-success badge-pill float-left mt-3">
+                        @if($infections->count() > 0)
+                            {{ number_format($recovered->sum('recovered') / $infections->sum('infections') * 100, 2) }} % 
+                        @endif
+                        <i class="mdi mdi-trending-up"></i> 
+                    </span>
                     <h2 class="font-weight-normal mb-1"> {{ $recovered->sum('recovered') }} </h2>
                     <p class="text-muted mb-3">Recoveries</p>
                 </div>
@@ -285,7 +300,11 @@
                             <td>{{ $province->deaths->sum('deaths') }}</td>
                             <td>{{ $province->recovered->sum('recovered') }}</td>
                             <td>{{ $province->infections->sum('infections') - $province->recovered->sum('recovered') - $province->deaths->sum('deaths')  }}</td>
-                            <td>{{ number_format($province->infections->sum('infections') / $province->tests->sum('tests') * 100 , 2) }}</td>
+                            <td>
+                                @if($province->tests->count() > 0)
+                                    {{ number_format($province->infections->sum('infections') / $province->tests->sum('tests') * 100 , 2) }}
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

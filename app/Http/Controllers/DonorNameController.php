@@ -17,7 +17,7 @@ class DonorNameController extends Controller
      */
     public function index()
     {
-        $donornames = DonorName::all();
+        $donornames = DonorName::paginate(10);
 
         return view('admin.donornames.index', compact('donornames'));
     }

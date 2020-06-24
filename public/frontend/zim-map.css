@@ -22,15 +22,16 @@
   background-color: #fff;
   border: 2px solid #eee;
   border-radius: 5px;
-  color: black;  
+  color: #4b4b4b;    
   padding: .4em;
   font-size: .8em;
   font-family: Roboto, Karla;
   position: absolute;
+  font-weight: 1000;
 }
 
 .info_panel::first-line {
-   font-weight: bold; 
+   font-weight: bolder; 
    color: black; 
    text-transform: uppercase; 
 }

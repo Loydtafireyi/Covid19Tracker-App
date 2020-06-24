@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use View;
 use App\Test;
+use App\Spent;
 use App\Death;
 use App\Pledge;
+use App\Country;
 use App\Recieved;
 use App\Province;
 use App\Infection;
@@ -45,8 +47,10 @@ class AppServiceProvider extends ServiceProvider
         View::share('quarantines', Quarantine::all());
         View::share('pledges', Pledge::all());
         View::share('recieved', Recieved::all());
+        View::share('spent', Spent::all());
         View::share('donortypes', DonorType::all());
         View::share('donorname', DonorName::all());
+        View::share('countries', Country::all());
 
         Schema::defaultStringLength(191);
     }

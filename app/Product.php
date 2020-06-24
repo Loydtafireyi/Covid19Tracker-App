@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class FocusArea extends Model
+class Product extends Model
 {
     protected $fillable = ['name'];
 
@@ -12,5 +12,4 @@ class FocusArea extends Model
     {
     	return $this->hasMany(Spent::class);
     }
-
 }

@@ -101,6 +101,12 @@ class FocusAreaController extends Controller
     {
         $focusarea = FocusArea::findOrFail($id);
 
+        if($focusarea->spents->count() > 0) {
+            session()->flash('error', 'Take it easy, this focus-area has some spendings');
+
+            return redirect(route('products.index'));
+        }
+
         $focusarea->delete();
 
         session()->flash('success', $focusarea->name . ' deleted successfully!');

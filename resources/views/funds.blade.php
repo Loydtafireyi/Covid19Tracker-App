@@ -133,7 +133,9 @@
                         data-readOnly=true data-thickness=".15" />
                 </div>
                 <div class="widget-detail-1 text-right">
-                    <h2 class="font-weight-normal pt-2 mb-1" style="font-size: 17px !important;"> US$106, 045, 367 </h2>
+                    <h2 class="font-weight-normal pt-2 mb-1" style="font-size: 17px !important;">
+                    US$ {{ $spent->sum('spent') }}
+                     </h2>
                     <p class="text-muted mb-1">Spent to date</p>
                 </div>
             </div>
@@ -166,7 +168,7 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-pink badge-pill float-left mt-3">50.7% <i
                             class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$201, 262, 171 </h2>
+                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{ $recieved->sum('recieved') - $spent->sum('spent') }} </h2>
                     <p class="text-muted mb-3">Current Amount</p>
                 </div>
                 <div class="progress progress-bar-alt-pink progress-sm">
@@ -227,7 +229,7 @@
                 </div>
 
                 <div class="widget-detail-1 text-right">
-                    <h2 class="font-weight-normal pt-2 mb-1" style="font-size: 17px !important;"> US$423,893</h2>
+                    <h2 class="font-weight-normal pt-2 mb-1" style="font-size: 17px !important;"> US$ {{ $weekPledge->sum('amount')}}</h2>
                     <p class="text-muted mb-1">Pledged This Week</p>
                 </div>
             </div>
@@ -260,7 +262,7 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-success badge-pill float-left mt-3">0.002% <i
                             class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$623,893 </h2>
+                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{$weekRecieved->sum('amount')}}</h2>
                     <p class="text-muted mb-3">Honoured This Week</p>
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
@@ -299,7 +301,7 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-pink badge-pill float-left mt-3">77% <i
                             class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$333,893 </h2>
+                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{$weekSpent->sum('spent')}} </h2>
                     <p class="text-muted mb-3">Spent This Week</p>
                 </div>
                 <div class="progress progress-bar-alt-pink progress-sm">
@@ -317,7 +319,13 @@
         <div class="mt-3" dir="ltr">
             <input data-plugin="knob" data-width="150" data-height="120" data-min="-100"
                 data-fgColor="#35b8e0" data-bgColor="#3b4452" data-displayPrevious=true
-                data-angleOffset=-125 data-angleArc=250 value="54" />
+                data-angleOffset=-125 data-angleArc=250 value="
+                @if($weekRecieved->count() >0)
+                    {{ $weekSpent->sum('spent') / $weekRecieved->sum('amount') }}
+                @else
+                    3
+                @endif
+                " />
             <h5 class="text-muted">Percentage Spent for the Week</h5>
         </div>
     </div><!-- end col-->
@@ -415,58 +423,6 @@
 </div>
 <!-- end row --> 
 
-
-<div class="row">
-	<div class="col-xl-6">
-        <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
-
-            <h4 class="header-title mt-0 mb-3">Donor Analysis </h4>
-
-            <div id="horizontal-bar-chart" class="ct-chart ct-golden-section"></div>
-        </div>
-    </div><!-- end col-->
-
-    <div class="col-xl-6">
-            <div class="card-box">
-                <div class="dropdown float-right">
-                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                        <i class="mdi mdi-dots-vertical"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                    </div>
-                </div>
-
-                <h4 class="header-title mt-0 mb-3">Pledge Progress</h4>
-
-                <div id="line-chart-tooltips" class="ct-chart ct-golden-section"></div>
-            </div>
-        </div><!-- end col-->
-    </div>
-    <!-- end row -->
 
 </div>
 

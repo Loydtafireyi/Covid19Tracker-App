@@ -41,6 +41,9 @@
 				@endforeach
 			</tbody>
 		</table>
+		<div class="text-center">
+			{{ $donortypes->links() }}
+		</div>
 	</div>
 </div>
 

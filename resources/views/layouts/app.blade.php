@@ -35,12 +35,15 @@
 
 <body class="bg-dark">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light sticky-top bg-dark shadow-sm border-bottom">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <img src="{{ asset('frontend/images/zimbabwe (1).svg') }}" alt="" height="30">
                     <span class="font-weight-bolder text-uppercase m-2 text-white">{{ config('app.name', 'Covid19') }}</span>
                 </a>
+
+                <a href="/" target="_blank" class="btn btn-success align-content-center" style="outline: none; border: none; background-color: #fff; color: #000; margin-left: 50%;">View Application Frontend</a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -98,7 +101,7 @@
                                     <i class="fas fa-globe-africa text-white"></i>
                                     <span class="text-white text-decoration-none text-uppercase">Countries</span>
                                 </a>
-                                <span class="text-white"></span>
+                                <span class="text-white">{{$countries->count()}}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
                                 <a href="{{route('provinces.index')}}" class="text-decoration-none"> 
@@ -127,14 +130,6 @@
                                     <span class="text-white text-decoration-none text-uppercase">Recovered</span>
                                </a>
                                 <span class="text-white">{{$recovered->sum('recovered')}}</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
-                                <a href="{{route('RequestAmbulance.index')}}"  class="text-decoration-none">
-                                    <i class="fas fa-ambulance text-white"></i>
-                                    <span class="text-white text-decoration-none text-uppercase">Ambulance Requests</span>
-
-                                </a>
-                                <span class="text-white">{{$requestAmbulances->count()}}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
                                 <a href="{{route('tests.index')}}"  class="text-decoration-none">
@@ -193,12 +188,32 @@
                                 </a>
                                 <span class="text-white"></span>
                             </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{ route('products.index') }}" class="text-decoration-none">
+                                    <i class="fas fa-users text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Products</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{ route('spent.index') }}" class="text-decoration-none">
+                                    <i class="fas fa-users text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Amount Spent</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-9">
                         @if(Session::has('success'))
                             <div class="alert alert-primary" role="alert">
                                 {{Session::get('success')}}
+                            </div>
+                        @endif
+
+                         @if(Session::has('error'))
+                            <div class="alert alert-danger" role="alert">
+                                {{Session::get('error')}}
                             </div>
                         @endif
 

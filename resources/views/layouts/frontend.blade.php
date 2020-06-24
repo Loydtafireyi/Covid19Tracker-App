@@ -258,8 +258,8 @@
                         <div class="text-md-right footer-links d-none d-sm-block">
                             <a href="{{ route('terms') }}">Terms & Conditions</a>
                             <a href="{{ route('privacy') }}">Privacy Policy</a>
-                            <a href="{{ env('WHATSAPP') }}">Help</a>
-                            <a href="{{ env('WHATSAPP') }}">Contact Us</a>
+                            <a href="/about">About</a>
+                            <a href="{{ env('WHATSAPP') }}" target="_blank">Contact Us</a>
                         </div>
                     </div>
                 </div>

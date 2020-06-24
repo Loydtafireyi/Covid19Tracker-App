@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Country;
 use App\Province;
+use App\Infection;
 use Illuminate\Http\Request;
+use App\Http\Middleware\VerifyCountryCount;
 
 class ProvincesController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('verifyCountryCount')->only(['create', 'store']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -103,6 +109,12 @@ class ProvincesController extends Controller
      */
     public function destroy(Province $province)
     {
+        if($province->infections()->count() > 0) {
+            session()->flash('error', 'Take it easy, you cannot delete this Province because it has some infections!');
+
+            return redirect(route('provinces.index'));
+        }
+
         $province->delete();
 
         session()->flash('success', $province->name . ' Province deleted successfully');
