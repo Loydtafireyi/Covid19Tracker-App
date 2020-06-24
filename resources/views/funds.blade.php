@@ -369,6 +369,65 @@
     </div><!-- end col -->
 
 
+    <div class="row">
+    <div class="col-12">
+        <div class="card">
+
+            <div class="card-body">
+                <h4 class="m-t-0 header-title mb-4">Response To Date</h4>
+
+                <div class="row icons-list-demo">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-account-heart-outline"></i> 2 Million Masks
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-24px mdi-account"></i> 60 000 Gowns
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-heart-pulse"></i> 20 Ventilators
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-home-group"></i> 5 Hospital Tents
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-airplane-takeoff"></i> 2 Tones PPE & Medical Supplies
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-charity"></i> 5 million Livelihood Cash Assistance
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-shield-home-outline"></i> Test Center Furnishing
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-bank-transfer"></i> 10 Million Business Continuity
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-text-to-speech"></i> 3 Million Media & Communication
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-teach"></i> 2 Million Education Stimulus
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-food-apple-outline"></i> 8 Million Nutrition
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <i class="mdi mdi-shield-check-outline"></i><i class="mdi mdi-account-group"></i> 1.2 Million
+                        Security & Public Protection
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+
 <!-- Table start -->
  <div class="col-xl-12">
 	<div class="card-box">

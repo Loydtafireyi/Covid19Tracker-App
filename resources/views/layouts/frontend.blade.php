@@ -77,20 +77,10 @@
                             <!-- End mobile menu toggle-->
                         </li>
     
-                        <li class="d-none d-sm-block">
-                            <form class="app-search">
-                                <div class="app-search-box">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search...">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="submit">
-                                                <i class="fe-search"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </li>
+                        <!-- Search Component -->
+                        <div id="app">
+                            <search></search>
+                        </div>
 
                         @auth
                             <li class="dropdown notification-list">
@@ -282,6 +272,8 @@
 
         <!-- App js-->
         <script src="{{ asset('frontend/js/app.min.js') }}"></script>
+
+        <script src="{{ asset('js/app.js') }}"></script>
 
          <script src="https://kit.fontawesome.com/661021e154.js" crossorigin="anonymous"></script>
 

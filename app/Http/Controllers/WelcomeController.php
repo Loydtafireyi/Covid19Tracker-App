@@ -25,4 +25,9 @@ class WelcomeController extends Controller
 
         return view('welcome', compact('provincies'));
     }
+
+    public function search()
+    {
+        
+    }
 }

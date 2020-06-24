@@ -16,7 +16,7 @@ class CreatePledgesTable extends Migration
         Schema::create('pledges', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('donor_name_id');
-            $table->decimal('amount');
+            $table->integer('amount');
             $table->timestamps();
 
             $table->index('donor_name_id');
