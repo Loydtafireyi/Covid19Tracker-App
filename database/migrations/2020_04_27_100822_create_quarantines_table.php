@@ -17,6 +17,8 @@ class CreateQuarantinesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('province_id');
             $table->string('quarantine_centre');
+            $table->string('tollfree')->nullable();
+            $table->string('telephone');
             $table->timestamps();
 
             $table->index('province_id');

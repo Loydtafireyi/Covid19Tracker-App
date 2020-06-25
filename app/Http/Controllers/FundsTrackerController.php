@@ -13,7 +13,7 @@ class FundsTrackerController extends Controller
 {
     public function index()
     {
-    	$donorname = DonorName::all();
+    	$donorname = DonorName::paginate(10);
 
     	$weekPledge = Pledge::where('created_at', '>', Carbon::now()->startOfWeek())
 	     ->where('created_at', '<', Carbon::now()->endOfWeek())

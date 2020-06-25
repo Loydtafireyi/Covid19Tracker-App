@@ -19,6 +19,7 @@
 		<table class="table table-dark table-bordered table-hover">
 			<thead>
 				<th>Name</th>
+				<th>Quantinty</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</thead>
@@ -26,6 +27,7 @@
 				@foreach($products as $product)
 				<tr>
 					<th>{{ $product->name }}</th>
+					<th>{{ $product->quantinty }}</th>
 					<th>
 						<a class="btn btn-primary btn-sm" href="{{ route('products.edit', $product->id) }}"> Edit
 						</a>

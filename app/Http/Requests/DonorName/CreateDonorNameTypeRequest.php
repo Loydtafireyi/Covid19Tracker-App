@@ -24,7 +24,7 @@ class CreateDonorNameTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'unique:donor_names',
         ];
     }
 }

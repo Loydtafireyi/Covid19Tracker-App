@@ -21,4 +21,5 @@ Route::get('tests', 'API\ApiController@index');
 Route::get('infections', 'API\ApiController@infections');
 Route::get('deaths', 'API\ApiController@deaths');
 Route::get('recovered', 'API\ApiController@recovered');
-Route::get('provinces', 'API\ApiController@provinces');
+Route::get('provinces', 'API\ApiController@provinces'); 
+Route::get('donors', 'API\ApiController@donorsDetail'); 

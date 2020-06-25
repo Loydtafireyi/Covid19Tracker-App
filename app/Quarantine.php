@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quarantine extends Model
 {
-    protected $fillable = ['quarantine_centre', 'province_id'];
+    protected $fillable = ['quarantine_centre', 'province_id', 'tollfree', 'telephone'];
 
     public function province()
     {

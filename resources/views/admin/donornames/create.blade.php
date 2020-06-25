@@ -3,10 +3,13 @@
 @section('content')
 
 <div class="card">
-	<div class="card-header">Add Donor</div>
+	<div class="card-header">{{ isset($donorname) ? 'Update Donor Name' : 'Add Donor Name' }}</div>
 	<div class="card-body">
-		<form action="{{ route('donor-name.store') }}" method="post">
+		<form action="{{ isset($donorname) ? route('donor-name.update', $donorname->id) : route('donor-name.store') }}" method="post">
 			@csrf
+			@if(isset($donorname))
+				@method('PATCH')
+			@endif
 
 			<div class="row">
 				<div class="col">
@@ -29,11 +32,17 @@
 				</div>
 				<div class="col">
 					<label for="name">Name</label>
-					<input type="text" name="name" id="name" class="form-control">
+					<input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{isset($donorname) ? $donorname->name : ''}}">
+
+					@error('name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
 				</div>	
 				</div>
 				<div class="form-group mt-3 mb-0">
-					<button type="submit" class="btn btn-success">Add Donor
+					<button type="submit" class="btn btn-success">{{ isset($donorname) ? 'Update Donor Name' : 'Add Donor Name' }}
 					</button>
 				</div>
 			</div>

@@ -83,15 +83,7 @@
                         </div>
 
                         @auth
-                            <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="fe-bell noti-icon"></i>
-                                <!-- <span class="badge badge-danger rounded-circle noti-icon-badge">9</span> -->
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-    
-                              
-    
+
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="{{ Auth::user()->avatar }}" alt="user-image" class="rounded-circle">
@@ -137,11 +129,6 @@
                             </div>
                         </li>
     
-                        <li class="dropdown notification-list">
-                            <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect">
-                                <i class="fe-settings noti-icon"></i>
-                            </a>
-                        </li>
                         @endauth
     
                     </ul>
@@ -249,7 +236,7 @@
                             <a href="{{ route('terms') }}">Terms & Conditions</a>
                             <a href="{{ route('privacy') }}">Privacy Policy</a>
                             <a href="/about">About</a>
-                            <a href="{{ env('WHATSAPP') }}" target="_blank">Contact Us</a>
+                            <a href="/about" target="_blank">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -259,21 +246,8 @@
 
         <!-- Vendor js -->
         <script src="{{ asset('frontend/js/vendor.min.js') }}"></script>
-
-        <!-- knob plugin -->
-        <script src="{{ asset('frontend/libs/jquery-knob/jquery.knob.min.js') }}"></script>
-
-        <!--Morris Chart-->
-        <script src="{{ asset('frontend/libs/morris-js/morris.min.js') }}"></script>
-        <script src="{{ asset('frontend/libs/raphael/raphael.min.js') }}"></script>
-
-        <!-- Dashboard init js-->
-        <script src="{{ asset('frontend/js/pages/dashboard.init.js') }}"></script>
-
         <!-- App js-->
         <script src="{{ asset('frontend/js/app.min.js') }}"></script>
-
-        <script src="{{ asset('js/app.js') }}"></script>
 
          <script src="https://kit.fontawesome.com/661021e154.js" crossorigin="anonymous"></script>
 

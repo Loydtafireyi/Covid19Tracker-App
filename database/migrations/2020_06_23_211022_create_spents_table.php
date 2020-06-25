@@ -15,7 +15,7 @@ class CreateSpentsTable extends Migration
     {
         Schema::create('spents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('spent');
+            $table->bigInteger('spent');
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('focus_area_id');
             $table->timestamps();

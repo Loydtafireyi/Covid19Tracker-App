@@ -24,21 +24,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-4">Total Infected</h4>
 
@@ -68,21 +53,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-4">Total Deaths</h4>
 
@@ -111,21 +81,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-3">Total Recoveries</h4>
 
@@ -155,21 +110,6 @@
     
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-3">Total Tests</h4>
 
@@ -197,21 +137,6 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-3">Zimbabwe Map  -  Hover to see stats by Province</h4>
             <!-- <h4 class="header-title mt-0 mb-3">Hover to see stats by Province</h4> -->
@@ -271,21 +196,21 @@
         </div>
     </div><!-- end col -->
     <div class="row">
-        <div class="col-12">
+        <div class="col">
             <div class="card-box">
                 <h4 class="mt-0 header-title">Provinces</h4>
                 <p class="text-muted font-14 mb-3">
-                    Zimbabwe Covid-19 statistics by Province. Download and analyze the data as you with. Stay safe and practice hygiene plus social distancing. We thrive to give you valid and accurate data, for more info hit the whatsapp button.
+                    Zimbabwe Covid-19 statistics by Province. Download and analyze the data as you with. Stay safe and practice hygiene plus social distancing. We thrive to give you valid and accurate data, for more info hit the whatsapp button we are are more than happy to help you. This tracker also comes with an android app. Click here to download it.
                 </p>
 
                 <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap">
                     <thead>
                     <tr>
                         <th>Provinces</th>
-                        <th>Tests</th>
-                        <th>Cases</th>
-                        <th>Deaths</th>
-                        <th>Recovered</th>
+                        <th>Tests To Date</th>
+                        <th>Confirmed Cases</th>
+                        <th>Confirmed Deaths</th>
+                        <th>Confirmed Recovered</th>
                         <th>Active Cases</th>
                         <th>Infection Rate</th>
                     </tr>
@@ -313,11 +238,8 @@
         </div>
     </div>
     <!-- end row -->
-</div>
-<!-- end row -->
 
 </div> <!-- end container -->
-</div>
 <!-- end wrapper -->
 
 <!-- ============================================================== -->
@@ -377,6 +299,7 @@
 
         });
     </script>
+
 @stop
 
 @endsection

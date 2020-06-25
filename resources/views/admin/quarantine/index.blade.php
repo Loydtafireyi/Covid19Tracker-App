@@ -18,8 +18,9 @@
 		<table class="table table-hover table-dark table-bordered m-0">
 			<thead>
 				<th>Province</th>
-				<th>Reported Date</th>
-				<th>Isolation Centre</th>
+				<th>Name</th>
+				<th>Tollfree</th>
+				<th>Telephone</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</thead>
@@ -27,9 +28,9 @@
 				@foreach($quarantine as $isolation)
 				<tr>
 					<td>{{$isolation->province->name}}</td>
-					<td>{{$isolation->date_reported}}</td>
-					<td>{{$isolation->quarantine}}</td>
-					<td>{{$isolation->region_code}}</td>
+					<td>{{$isolation->quarantine_centre}}</td>
+					<td>{{$isolation->tollfree}}</td>
+					<td>{{$isolation->telephone}}</td>
 					<td>
 						<a class="btn btn-primary btn-sm" href="{{route('quarantine.edit', $isolation->id)}}">Edit</a>
 					</td>

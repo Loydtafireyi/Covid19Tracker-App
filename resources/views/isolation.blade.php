@@ -36,6 +36,8 @@
                                     <tr>
                                         <th>Province</th>
                                         <th data-priority="1">Isolation/Quarantine Centre</th>
+                                        <th data-priority="2">Toll Free</th>
+                                        <th data-priority="3">General Numbers</th>
                                     </tr>
                                     </thead>
                                     <tbody class="text-center">
@@ -43,6 +45,8 @@
                                     <tr>
                                         <th><span class="co-name">{{ $centres->province->name }}</span></th>
                                         <td>{{ $centres->quarantine_centre }}</td>
+                                        <td>{{ $centres->tollfree }}</td>
+                                        <td>{{ $centres->telephone }}</td>
                                     </tr>
                                     @endforeach
                                     </tbody>

@@ -38,7 +38,9 @@ class QuarantineController extends Controller
     {
         Quarantine::create([
             'province_id' => $request->province_id,
-            'quarantine_centre' => $request->quarantine_centre
+            'quarantine_centre' => $request->quarantine_centre,
+            'tollfree' => $request->tollfree,
+            'telephone' => $request->telephone
         ]);
 
         session()->flash('success', $request->quarantine_centre . ' centre added successfully');
@@ -63,9 +65,9 @@ class QuarantineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Quarantine $quarantine)
     {
-        //
+        return view('admin.quarantine.create', compact('quarantine'));
     }
 
     /**
@@ -75,9 +77,15 @@ class QuarantineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Quarantine $quarantine)
     {
-        //
+        $data = $request->all();
+
+        $quarantine->update($data);
+
+        session()->flash('success', $request->quarantine_centre . ' centre updated successfully');
+
+        return redirect(route('quarantine.index'));
     }
 
     /**
@@ -86,8 +94,12 @@ class QuarantineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Quarantine $quarantine)
     {
-        //
+        $quarantine->delete();
+
+        session()->flash('success', $request->quarantine_centre . ' centre added successfully');
+
+        return redirect(route('quarantine.index'));
     }
 }

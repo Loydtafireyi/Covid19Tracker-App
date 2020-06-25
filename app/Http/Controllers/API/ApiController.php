@@ -7,6 +7,8 @@ use App\Death;
 use App\Province;
 use App\Infection;
 use App\Recovered;
+use App\DonorName;
+use App\DonorType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -53,5 +55,20 @@ class ApiController extends Controller
     	})->toArray();
 
     	return $provinces;
+    }
+
+
+    public function donorsDetail()
+    {
+        $donorsDetail =  DonorName::with(['donor_type'])->get()->map(function ($donor) {
+            return[
+                'donor_name' => $donor->name,
+                'donor_type' => $donor->donor_type->type,
+                'pledges' => $donor->pledges->sum('amount'),
+                'honoured' => $donor->recieveds->sum('amount')
+            ];
+        })->toArray();
+
+        return $donorsDetail;
     }
 }

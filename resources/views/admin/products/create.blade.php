@@ -13,7 +13,16 @@
 				<div class="col">
 					<label for="name">Product To Spend On</label>
 					<input type="text" name="name" id="name" class="form-control" value="{{ isset($product) ? $product->name : '' }}">
-					@error('product')
+					@error('name')
+						<div class="alert alert-danger mt-1" role="alert">
+							<strong>{{ $message }}</strong>
+					@endif
+				</div>
+
+				<div class="col">
+					<label for="quantity">Quantity</label>
+					<input type="number" name="quantity" id="quantity" class="form-control" value="{{ isset($product) ? $product->quantity : '' }}">
+					@error('quantity')
 						<div class="alert alert-danger mt-1" role="alert">
 							<strong>{{ $message }}</strong>
 					@endif

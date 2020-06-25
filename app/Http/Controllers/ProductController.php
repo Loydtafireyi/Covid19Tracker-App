@@ -38,7 +38,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         Product::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'quantity' => $request->quantity
         ]);
 
         session()->flash('success', $request->name . ' product added successfully');
@@ -77,7 +78,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $data = $request->only(['name']);
+        $data = $request->only(['name', 'quantity']);
 
         $product->update($data);
 

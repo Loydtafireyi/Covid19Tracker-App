@@ -16,7 +16,7 @@ class CreateRecievedsTable extends Migration
         Schema::create('recieveds', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('donor_name_id');
-            $table->integer('amount');
+            $table->bigInteger('amount');
             $table->timestamps();
 
             $table->index('donor_name_id');

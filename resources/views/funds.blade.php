@@ -31,22 +31,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-4">Total Pledged</h4>
 
@@ -68,22 +52,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-3">Honoured Pledges</h4>
 
@@ -107,22 +75,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-4">Amount Spent</h4>
 
@@ -145,22 +97,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-3">Amount Left</h4>
 
@@ -202,22 +138,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-4">Pledged</h4>
 
@@ -239,22 +159,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-3">Honoured Pledges</h4>
 
@@ -278,22 +182,6 @@
 
     <div class="col-xl-3 col-md-6">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-3">Spent This Week</h4>
 
@@ -330,7 +218,7 @@
         </div>
     </div><!-- end col-->
     
-          <!-- end row -->
+    <!-- end row -->
 </div>
 <!-- end row -->
 
@@ -346,21 +234,6 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card-box">
-            <div class="dropdown float-right">
-                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                </div>
-            </div>
 
             <h4 class="header-title mt-0 mb-3">Our Covid19 Donor Locations </h4>
 
@@ -431,21 +304,6 @@
 <!-- Table start -->
  <div class="col-xl-12">
 	<div class="card-box">
-	    <div class="dropdown float-right">
-	        <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-	            <i class="mdi mdi-dots-vertical"></i>
-	        </a>
-	        <div class="dropdown-menu dropdown-menu-right">
-	            <!-- item-->
-	            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-	            <!-- item-->
-	            <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-	            <!-- item-->
-	            <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-	            <!-- item-->
-	            <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-	        </div>
-	    </div>
 
 	    <h4 class="header-title mt-0 mb-3">Sources</h4>
 
@@ -459,6 +317,7 @@
                     <th>Amount Honored</th>
                     <th>Amount Left</th>
                     <th>Donor Type</th>
+                    <th>Progress</th>
 	            </tr>
 	            </thead>
 	            <tbody>
@@ -469,12 +328,19 @@
                         <td>{{ $donor->pledges->sum('amount') }}</td>
                         <td>{{ $donor->recieveds->sum('amount') }}</td>
                         <td>{{ $donor->pledges->sum('amount') - $donor->recieveds->sum('amount') }}</td>
-                        <td><span class="badge badge-danger">{{ $donor->donor_type->type }}</span></td>
+                        <td><span class="badge badge-success">{{ $donor->donor_type->type }}</span>
+                        </td>
+                        <td>
+                            <span data-plugin="peity-pie" data-colors="#71b6f9,#3b4452" data-width="30" data-height="30">226,134</span>
+                        </td>
                     </tr>
                     @endforeach
 
 	            </tbody>
 	        </table>
+
+            <div class="dataTables_paginate paging_simple_numbers ml-5" id="datatable-buttons_paginate">{{ $donorname->links() }}</div>
+            
 	    </div>
 	</div>
 </div><!-- end col -->
@@ -489,15 +355,19 @@
 @endsection
 
 @section('scripts')
+<!-- jquery knob -->
+<script src="{{ asset('frontend/libs/jquery-knob/jquery.knob.min.js') }} "></script>
+<!-- Sparkline charts -->
+<script src="{{ asset('frontend/libs/jquery-sparkline/jquery.sparkline.min.js') }} "></script>
+<script src="{{ asset('frontend/js/pages/charts-other.init.js') }} "></script>
+<!-- peity charts -->
+<script src="{{ asset('frontend/libs/peity/jquery.peity.min.js') }}"></script>
+<!-- App js-->
+<script src="{{ asset('frontend/js/app.min.js') }}"></script>
 <!-- Jvector map js -->
 <script src="{{ asset('frontend/libs/jquery-vectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
 <script src="{{ asset('frontend/libs/jquery-vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 <!-- vector map init -->
 <script src="{{ asset('frontend/js/pages/jvectormap.init.js') }}"></script>
-<!--Chartist Chart-->
-<script src="{{ asset('frontend/libs/chartist/chartist.min.js') }}"></script>
-<script src="{{ asset('frontend/libs/chartist/chartist-plugin-tooltip.min.js') }}"></script>
 
-<!-- Init js -->
-<script src="{{ asset('frontend/js/pages/chartist.init.js') }}"></script>
 @endsection
