@@ -17,6 +17,16 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500|Source+Code+Pro:300" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('docs/css/style.css') }}" media="all">
         <script>hljs.initHighlightingOnLoad();</script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162750660-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-162750660-2');
+        </script>
+
     </head>
 
     <body>
@@ -69,7 +79,7 @@
                     <p>
                         This API only support get requests - examples<br>
                         <code class="higlighted">GET https://covid19zim.online/api</code><br><br>
-                        TOOLING - Iinsomnia/Postman
+                        TOOLING - Ininsomnia/Postman
                     </p>
                     <br>
                     <pre><code class="json">

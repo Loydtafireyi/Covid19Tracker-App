@@ -28,6 +28,17 @@
         <!-- Responsive Table css -->
         <link href="{{ asset('frontend/libs/rwd-table/rwd-table.min.css') }}" rel="stylesheet" type="text/css" />
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162750660-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-162750660-2');
+        </script>
+
+
         @yield('css')
 
     </head>
@@ -179,7 +190,7 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a type="button" class="btn btn-danger text-white w-md waves-effect waves-light mr-3"><i class="mdi mdi-plus"></i>Self-Positive</a>
+                                <a type="button" href="{{ route('self-positive.create') }}" class="btn btn-danger text-white w-md waves-effect waves-light mr-3"><i class="mdi mdi-plus"></i>Self-Positive</a>
                             </li>
 
                              <li class="has-submenu">
