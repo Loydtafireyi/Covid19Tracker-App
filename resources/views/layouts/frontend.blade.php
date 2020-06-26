@@ -20,6 +20,7 @@
         <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('frontend/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('frontend/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="{{ asset('frontend/zim-map.css') }}">
 
         <!-- jvectormap -->
@@ -42,29 +43,6 @@
         @yield('css')
 
     </head>
-
-    <style type="text/css">
-    /*Whatsapp support button*/
-
-        .float{
-            position:fixed;
-            width:60px;
-            height:60px;
-            bottom:60px;
-            left:20px;
-            background-color:#25d366;
-            color:#fff;
-            border-radius:50px;
-            text-align:center;
-          font-size:30px;
-            box-shadow: 2px 2px 3px #999;
-          z-index:100;
-        }
-
-        .my-float{
-            margin-top:16px;
-        }
-    </style>
 
     <body>
 
@@ -239,6 +217,23 @@
         <a href="{{ env('WHATSAPP') }}" class="float" target="_blank"><i class="fa fa-whatsapp my-float"></i>
         </a>
 
+        <!-- Mobile App download constent banner -->
+        <div class="consent-banner">
+            <div class="section1">
+                <a href="feed.html">
+                <img 
+                    src="{{ asset('frontend/images/android.png') }}"
+                    alt="logo"
+                    title="Dowload Android App"
+                    width="150" 
+                    class="navigation__logo"
+                />
+                </a>
+                <p> Dowload App!</p> 
+            </div>
+            <i class="cancel fas fa-times"></i>
+        </div>
+
         <!-- Footer Start -->
         <footer class="footer">
             <div class="container-fluid">
@@ -264,6 +259,9 @@
         <script src="{{ asset('frontend/js/vendor.min.js') }}"></script>
         <!-- App js-->
         <script src="{{ asset('frontend/js/app.min.js') }}"></script>
+
+        <!-- Custom js-->
+        <script src="{{ asset('frontend/js/custom.js') }}"></script>
 
          <script src="https://kit.fontawesome.com/661021e154.js" crossorigin="anonymous"></script>
 

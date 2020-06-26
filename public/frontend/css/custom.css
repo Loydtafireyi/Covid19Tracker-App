@@ -1,0 +1,97 @@
+@media only screen
+and (min-width: 220px)
+    and (max-width: 770px){
+
+    /*Login Consent Banner*/
+    .consent-banner{
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        background: rgba(47,54,64, 0.9);
+        color: #fff;
+        padding: 0 32px;
+        height: 100px;
+        z-index: 5000;
+        transition: 400ms;
+        border-top: 1px solid #fff;
+    }
+
+    .consent-banner.active {
+        bottom: 0;
+    }
+
+    .consent-banner .section1{
+        display: flex;
+        padding: 7px 13px;
+        margin: auto;
+     }
+
+    .consent-banner .auth{
+        display: flex; 
+        margin: auto;
+    }
+
+    .consent-banner .margin-left{
+        margin-left: 40px;
+    }
+
+     .consent-banner p{
+        margin-top: 10px; 
+        margin-left: 10px;
+     }
+
+     .consent-banner i{
+        margin-left: 25px;
+        margin-top: 15px;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+     }
+
+     .float{
+        width:40px !important;
+        height:40px !important;
+        font-size: 30px !important;
+        box-shadow: none !important;
+        background-color: none !important;
+
+    }
+
+    .my-float{
+        margin-top: 0px !important;
+        margin-bottom: 2px !important;
+    }
+}
+
+
+@media only screen
+and (min-width: 771px)
+    and (max-width: 10000px){
+         .consent-banner{
+            display: none;
+         }
+}
+
+/*Whatsapp support button*/
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:60px;
+    left:20px;
+    background-color:#25d366;
+    color:#fff;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+.my-float{
+    margin-top:16px;
+}
