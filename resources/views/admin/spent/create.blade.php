@@ -38,7 +38,7 @@
 			</div>
 	
 			<div class="form-group">
-				<label for="spent">Province spent</label>
+				<label for="spent">Amount spent</label>
 				<input type="text" name="spent" id="spent" class="form-control">
 
 				@error('spent')

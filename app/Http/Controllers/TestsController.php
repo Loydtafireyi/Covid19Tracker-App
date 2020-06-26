@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Test;
+use App\Province;
 use Illuminate\Http\Request;
 use App\Http\Requests\Tests\CreateTestsRequest;
 
@@ -25,7 +26,9 @@ class TestsController extends Controller
      */
     public function create()
     {
-        return view('admin.tests.create');
+        $provinces = Province::all();
+
+        return view('admin.tests.create', compact('provinces'));
     }
 
     /**
@@ -42,7 +45,7 @@ class TestsController extends Controller
             'tests_date' => $request->tests_date
         ]);
 
-        session()->flash('success', "$request->tests tests added succesfully");
+        session()->flash('success', "$Tests added succesfully");
 
         return redirect()->route('tests.index');
     }
@@ -64,9 +67,11 @@ class TestsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Test $test)
     {
-        //
+        $provinces = Province::all();
+
+        return view('admin.tests.create', compact('test', 'provinces'));
     }
 
     /**
@@ -76,9 +81,15 @@ class TestsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Test $test)
     {
-        //
+        $data = $request->all();
+
+        $test->update($data);
+
+        session()->flash('success', "Tests tests updated succesfully");
+
+        return redirect()->route('tests.index');
     }
 
     /**
@@ -87,8 +98,13 @@ class TestsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Test $test)
     {
-        //
+        
+        $test->delete();
+
+        session()->flash('success', "Tests deleted succesfully");
+
+        return redirect()->route('tests.index');
     }
 }

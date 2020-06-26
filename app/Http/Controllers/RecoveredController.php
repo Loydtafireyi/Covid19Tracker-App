@@ -67,8 +67,10 @@ class RecoveredController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Recovered $recover)
+    public function edit($id)
     {
+        $recover = Recovered::findOrFail($id);
+
         $provinces = Province::all();
 
         return view('admin.recovered.create', compact('recover', 'provinces'));
@@ -100,6 +102,13 @@ class RecoveredController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $recover = Recovered::findOrFail($id);
+
+        $recover->delete();
+
+        session()->flash('success', 'Data deleted successfully');
+
+        return redirect(route('recovered.index'));
+
     }
 }

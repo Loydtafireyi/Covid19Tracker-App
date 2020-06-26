@@ -18,6 +18,7 @@ Route::get('privacy/policy', 'PrivacyPolicyController@index')->name('privacy');
 Route::get('terms', 'TermsController@index')->name('terms');
 Route::get('zimbabwe-covid19-isolation-centres', 'StatsByProvinceController@isolation')->name('isolation');
 Route::view('/about',  'about');
+Route::view('/api/docs',  'api-docs');
 
 Auth::routes();
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');

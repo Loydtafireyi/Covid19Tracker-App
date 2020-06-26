@@ -25,7 +25,7 @@
 			</div>
 			<div class="form-group"> 
 				<label for="date_reported">Date Reported</label>
-				<input type="date" name="date_reported" id="date_reported" class="form-control" value="{{isset($recover) ? $recover->date_reported : ''}}">
+				<input type="text" name="date_reported" id="date_reported" class="form-control" value="">
 			</div>
 			<div class="form-group">
 				<label for="recovered">Recovered</label>

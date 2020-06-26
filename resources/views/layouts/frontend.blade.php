@@ -179,7 +179,12 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a type="button" class="btn btn-danger text-white w-md waves-effect waves-light mr-3"><i class="mdi mdi-plus"></i> Report Self-Positive</a>
+                                <a type="button" class="btn btn-danger text-white w-md waves-effect waves-light mr-3"><i class="mdi mdi-plus"></i>Self-Positive</a>
+                            </li>
+
+                             <li class="has-submenu">
+                                <a href="/api/docs" target="_blank"> <i class="fas fa-code-branch"></i></i>REST API</a>
+
                             </li>
 
                             @auth

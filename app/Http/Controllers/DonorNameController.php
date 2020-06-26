@@ -83,7 +83,7 @@ class DonorNameController extends Controller
 
         $donorname = DonorName::findOrFail($id);
 
-        return view('admin.donornames.create', compact('donorname', 'donortypes', 'countries'));
+        return view('admin.donornames.edit', compact('donorname', 'donortypes', 'countries'));
     }
 
     /**
