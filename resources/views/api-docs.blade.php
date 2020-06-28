@@ -1,4 +1,4 @@
-
+\
 <!DOCTYPE html>
 <html class="no-js" lang="en"> 
     <head>
@@ -75,11 +75,15 @@
 
 -X GET https://covid19zim.online/api/donors
 
+-X GET https://covid19zim.online/api/spent
+
+-X GET https://covid19zim.online/api/isolation-centres
+
                 </code></pre>
                     <p>
                         This API only support get requests - examples<br>
                         <code class="higlighted">GET https://covid19zim.online/api</code><br><br>
-                        TOOLING - Ininsomnia/Postman
+                        TOOLING - Insomnia/Postman
                     </p>
                     <br>
                     <pre><code class="json">
@@ -150,6 +154,20 @@ Result example :
                                 <td>GET</td>
                                 <td>
                                     Returns all the covid related donors, amount pledged, amount spent and so on.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>isolation centres</td>
+                                <td>GET</td>
+                                <td>
+                                    Returns all the isolation/quarantine centres, tollfree, general numbers and province
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>amount spent</td>
+                                <td>GET</td>
+                                <td>
+                                    Returns all the amount spent towards covid-19 (products, quantinty, focus areas and amount spent)
                                 </td>
                             </tr>
                             

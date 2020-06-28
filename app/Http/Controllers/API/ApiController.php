@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\API;
 
 use App\Test;
+use App\Spent;
 use App\Death;
 use App\Province;
 use App\Infection;
 use App\Recovered;
 use App\DonorName;
 use App\DonorType;
+use App\Quarantine;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -70,5 +72,33 @@ class ApiController extends Controller
         })->toArray();
 
         return $donorsDetail;
+    }
+
+    public function isolation()
+    {
+        $isolations = Quarantine::with(['province'])->get()->map(function ($iso) {
+            return [
+                'province' => $iso->province->name,
+                'centre_name' => $iso->quarantine_centre,
+                'tollfree' => $iso->tollfree,
+                'telephone' => $iso->telephone,
+            ];
+        })->toArray();
+
+        return $isolations;
+    }
+
+    public function spent()
+    {
+        $spent = Spent::with(['focusArea', 'product'])->get()->map(function ($sp) {
+            return [
+                'focusArea' => $sp->focusArea->name,
+                'product_name' => $sp->product->name,
+                'product_quantity' => $sp->product->quantity,
+                'amount_spent' => $sp->spent,
+            ];
+        })->toArray();
+
+        return $spent;
     }
 }

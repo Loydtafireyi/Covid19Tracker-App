@@ -23,3 +23,5 @@ Route::get('deaths', 'API\ApiController@deaths');
 Route::get('recovered', 'API\ApiController@recovered');
 Route::get('provinces', 'API\ApiController@provinces'); 
 Route::get('donors', 'API\ApiController@donorsDetail'); 
+Route::get('spent', 'API\ApiController@spent'); 
+Route::get('isolation-centres', 'API\ApiController@isolation'); 
