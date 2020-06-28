@@ -46,4 +46,9 @@ class Province extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function self_positives()
+    {
+        return $this->hasMany(SelfPositive::class);
+    }
 }

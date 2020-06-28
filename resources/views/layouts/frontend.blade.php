@@ -147,7 +147,7 @@
                         <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="/"><i class="fas fa-chart-pie"></i>Cases Stats Overview</a>
+                                <a href="/"><i class="fas fa-chart-pie"></i>Cases Overview</a>
                             </li>
 
                              <li class="has-submenu">
@@ -182,7 +182,7 @@
                             @else
                             
                             <li class="has-submenu">
-                                <a href="{{ route('login') }}"> <i class="mdi mdi-chevron-triple-right"></i>Login</a>
+                                <a href="{{ route('login') }}">Login</a>
                             </li>
                             
                             @endauth

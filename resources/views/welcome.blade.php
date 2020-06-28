@@ -35,7 +35,7 @@
                         @endif
                         <i class="mdi mdi-trending-up"></i> 
                     </span>
-                    <h2 class="font-weight-normal mb-1"> {{ $infections->sum('infections') }} </h2>
+                    <h2 class="font-weight-normal mb-1" data-plugin="counterup"> {{ $infections->sum('infections') }} </h2>
                     <p class="text-muted mb-3">Infected</p>
                 </div>
                 <div class="progress progress-bar-alt-warning progress-sm">
@@ -64,7 +64,7 @@
                         @endif
                         <i class="mdi mdi-trending-up"></i> 
                     </span>
-                    <h2 class="font-weight-normal mb-1"> {{ $deaths->sum('deaths') }} </h2>
+                    <h2 class="font-weight-normal mb-1" data-plugin="counterup"> {{ $deaths->sum('deaths') }} </h2>
                     <p class="text-muted mb-3">Deaths</p>
                 </div>
                 <div class="progress progress-bar-alt-danger progress-sm">
@@ -92,7 +92,7 @@
                         @endif
                         <i class="mdi mdi-trending-up"></i> 
                     </span>
-                    <h2 class="font-weight-normal mb-1"> {{ $recovered->sum('recovered') }} </h2>
+                    <h2 class="font-weight-normal mb-1" data-plugin="counterup"> {{ $recovered->sum('recovered') }} </h2>
                     <p class="text-muted mb-3">Recoveries</p>
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
@@ -116,7 +116,7 @@
             <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-primary badge-pill float-left mt-3">2.1% <i class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1"> {{ $tests->sum('tests') }} </h2>
+                    <h2 class="font-weight-normal mb-1" data-plugin="counterup"> {{ $tests->sum('tests') }} </h2>
                     <p class="text-muted mb-3">Tests Conducted</p>
                 </div>
                 <div class="progress progress-bar-alt-primary progress-sm">
