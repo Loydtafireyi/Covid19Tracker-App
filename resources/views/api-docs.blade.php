@@ -79,6 +79,8 @@
 
 -X GET https://covid19zim.online/api/isolation-centres
 
+-X GET https://covid19zim.online/api/total-amounts
+
                 </code></pre>
                     <p>
                         This API only support get requests - examples<br>
@@ -157,14 +159,14 @@ Result example :
                                 </td>
                             </tr>
                             <tr>
-                                <td>isolation centres</td>
+                                <td>isolation-centres</td>
                                 <td>GET</td>
                                 <td>
                                     Returns all the isolation/quarantine centres, tollfree, general numbers and province
                                 </td>
                             </tr>
                             <tr>
-                                <td>amount spent</td>
+                                <td>amount-spent</td>
                                 <td>GET</td>
                                 <td>
                                     Returns all the amount spent towards covid-19 (products, quantinty, focus areas and amount spent)

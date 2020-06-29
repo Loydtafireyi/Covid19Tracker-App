@@ -227,7 +227,7 @@
                             <td>{{ $province->infections->sum('infections') - $province->recovered->sum('recovered') - $province->deaths->sum('deaths')  }}</td>
                             <td>
                                 @if($province->tests->count() > 0)
-                                    {{ number_format($province->infections->sum('infections') / $province->tests->sum('tests') * 100 , 2) }}
+                                    {{ number_format($province->infections->sum('infections') / $province->tests->sum('tests') * 100 , 2) }} % 
                                 @endif
                             </td>
                         </tr>

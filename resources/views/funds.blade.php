@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="widget-detail-1 text-right">
-                    <h2 class="font-weight-normal pt-2 mb-1" data-plugin="counterup" style="font-size: 17px !important;"> US${{ $pledges->sum('amount') }}</h2>
+                    <h2 class="font-weight-normal pt-2 mb-1" style="font-size: 17px !important;"> US${{ $pledges->sum('amount') }}</h2>
                     <p class="text-muted mb-1">Pledged To Date</p>
                 </div>
             </div>
@@ -59,8 +59,8 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-success badge-pill float-left mt-3">49.3% <i
                             class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1" data-plugin="counterup" style="font-size: 17px !important;"> US${{ $recieved->sum('amount') }} </h2>
-                    <p class="text-muted mb-3">Honoured Pledges</p>
+                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US${{ $recieved->sum('amount') }} </h2>
+                    <p class="text-muted mb-3">Revenue today</p>
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
                     <div class="progress-bar bg-success" role="progressbar" aria-valuenow="77"
@@ -85,7 +85,7 @@
                         data-readOnly=true data-thickness=".15" />
                 </div>
                 <div class="widget-detail-1 text-right">
-                    <h2 class="font-weight-normal pt-2 mb-1" data-plugin="counterup" style="font-size: 17px !important;">
+                    <h2 class="font-weight-normal pt-2 mb-1" style="font-size: 17px !important;">
                     US$ {{ $spent->sum('spent') }}
                      </h2>
                     <p class="text-muted mb-1">Spent to date</p>
@@ -104,7 +104,7 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-pink badge-pill float-left mt-3">50.7% <i
                             class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1" data-plugin="counterup" style="font-size: 17px !important;"> US$ {{ $recieved->sum('recieved') - $spent->sum('spent') }} </h2>
+                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{ $recieved->sum('recieved') - $spent->sum('spent') }} </h2>
                     <p class="text-muted mb-3">Current Amount</p>
                 </div>
                 <div class="progress progress-bar-alt-pink progress-sm">
@@ -149,7 +149,7 @@
                 </div>
 
                 <div class="widget-detail-1 text-right">
-                    <h2 class="font-weight-normal pt-2 mb-1" data-plugin="counterup" style="font-size: 17px !important;"> US$ {{ $weekPledge->sum('amount')}}</h2>
+                    <h2 class="font-weight-normal pt-2 mb-1" style="font-size: 17px !important;"> US$ {{ $weekPledge->sum('amount')}}</h2>
                     <p class="text-muted mb-1">Pledged This Week</p>
                 </div>
             </div>
@@ -166,7 +166,7 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-success badge-pill float-left mt-3">0.002% <i
                             class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1" data-plugin="counterup" style="font-size: 17px !important;"> US$ {{$weekRecieved->sum('amount')}}</h2>
+                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{$weekRecieved->sum('amount')}}</h2>
                     <p class="text-muted mb-3">Honoured This Week</p>
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
@@ -189,7 +189,7 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-pink badge-pill float-left mt-3">77% <i
                             class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1" data-plugin="counterup" style="font-size: 17px !important;"> US$ {{$weekSpent->sum('spent')}} </h2>
+                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{$weekSpent->sum('spent')}} </h2>
                     <p class="text-muted mb-3">Spent This Week</p>
                 </div>
                 <div class="progress progress-bar-alt-pink progress-sm">
@@ -211,7 +211,7 @@
                 @if($weekRecieved->count() >0)
                     {{ $weekSpent->sum('spent') / $weekRecieved->sum('amount') }}
                 @else
-                    0
+                    3
                 @endif
                 " />
             <h5 class="text-muted">Percentage Spent for the Week</h5>

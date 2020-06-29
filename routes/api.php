@@ -25,3 +25,5 @@ Route::get('provinces', 'API\ApiController@provinces');
 Route::get('donors', 'API\ApiController@donorsDetail'); 
 Route::get('spent', 'API\ApiController@spent'); 
 Route::get('isolation-centres', 'API\ApiController@isolation'); 
+Route::get('total-amounts', 'API\ApiController@amountTotals'); 
+

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\API;
 use App\Test;
 use App\Spent;
 use App\Death;
+use App\Pledge;
+use App\Recieved;
 use App\Province;
 use App\Infection;
 use App\Recovered;
@@ -100,5 +102,15 @@ class ApiController extends Controller
         })->toArray();
 
         return $spent;
+    }
+
+    public function amountTotals()
+    {
+        $total_pledges = Pledge::all()->sum('amount');
+        $total_recieved = Recieved::all()->sum('amount');
+        $total_spent = Spent::all()->sum('spent');
+        $amount_left = $total_recieved - $total_spent;
+
+        return (compact('total_pledges', 'total_recieved', 'total_spent', 'amount_left'));
     }
 }
