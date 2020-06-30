@@ -72,45 +72,47 @@
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label">Province</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control">
-                                        <option>Harare</option>
-                                        <option>Harare</option>
-                                        <option>Harare</option>
-                                        <option>Harare</option>
-                                        <option>Harare</option>
+                                    <select class="form-control" name="province_id" id="province_id">
+
+                                        @foreach($provinces as $province)
+                                            <option value="{{$province->id}}">{{ $province->name }}</option>
+                                        @endforeach
+
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label">Have you tested positive fo the corona?</label>
                                 <div class="ml-2 custom-control custom-radio">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio1">Yes</label>
+                                    <input type="radio" id="tested" name="tested" class="custom-control-input">
+                                    <label class="custom-control-label" for="tested">Yes</label>
                                 </div>
                                 <div class="ml-2 custom-control custom-radio">
                                     <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
                                     <label class="custom-control-label" for="customRadio2">No</label>
-                                </div>
-                                 <div class="ml-2 custom-control custom-radio">
-                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio2">Pending</label>
-                                </div>
-                                 <div class="ml-2 custom-control custom-radio">
-                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio2">Not Tested</label>
                                 </div>
                             </div>
 
                              <div class="form-group row">
                                 <label class="col-sm-2  col-form-label">Are you having symptoms?</label>
-                                <div class="ml-2 custom-control custom-radio">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio1">Yes</label>
+                                <div class="ml-2 checkbox checkbox-primary checkbox-circle">
+                                    <input id="checkbox" type="checkbox">
+                                    <input id="checkb" type="checkbox">
+                                    <label for="checkbox-9">
+                                        No
+                                    </label>
                                 </div>
-                                <div class="ml-2 custom-control custom-radio">
-                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio2">No</label>
+                                <div class="ml-2 checkbox checkbox-danger checkbox-circle">
+                                    <input id="symptoms" name="symptoms" type="checkbox">
+                                    <label for="symptoms">
+                                        Yes
+                                    </label>
                                 </div>
+                            </div>
+
+                            <div class="radio radio-info form-check-inline">
+                                <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                                <label for="inlineRadio1"> Inline One </label>
                             </div>
 
                                 <div class="form-group row">

@@ -46,5 +46,5 @@ Route::middleware(['auth', 'admin'])->group(function ()
 });
 
 Route::resource('self-positive', 'SelfPositiveController');
-Route::resource('donate', 'DonateController');
-Route::get('donate', 'DonateController@paynow')->name('paynow');
+Route::post('donate-paynow', 'DonationsController@paynow')->name('paynow');
+Route::resource('donate', 'DonationsController');
