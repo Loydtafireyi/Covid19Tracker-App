@@ -24,7 +24,7 @@ class CreateSelfPositiveRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required',
+            'email' => 'required|email:rfc,dns',
             'g-recaptcha-response' => 'required|recaptcha',
         ];
     }

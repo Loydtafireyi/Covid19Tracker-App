@@ -57,10 +57,14 @@
 
             <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-success badge-pill float-left mt-3">49.3% <i
+                    <span class="badge badge-success badge-pill float-left mt-3">
+                        @if($pledges->sum('amount') > 0)
+                            {{ number_format($recieved->sum('amount') / $pledges->sum('amount') * 100, 2) }}
+                        @endif
+                        % <i
                             class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US${{ $recieved->sum('amount') }} </h2>
-                    <p class="text-muted mb-3">Revenue today</p>
+                    <p class="text-muted mb-3">Honoured To Date</p>
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
                     <div class="progress-bar bg-success" role="progressbar" aria-valuenow="77"
@@ -81,14 +85,18 @@
             <div class="widget-chart-1">
                 <div class="widget-chart-box-1 float-left" dir="ltr">
                     <input data-plugin="knob" data-width="80" data-height="80" data-fgColor="#ffbd4a"
-                        data-bgColor="#FFE6BA" value="54.2" data-skin="tron" data-angleOffset="180"
+                        data-bgColor="#FFE6BA" 
+                        value=" @if($recieved->sum('amount') > 0)
+                                    {{ number_format($spent->sum('spent') / $recieved->sum('amount') * 100, 2) }}
+                                @endif"
+                        data-skin="tron" data-angleOffset="180"
                         data-readOnly=true data-thickness=".15" />
                 </div>
                 <div class="widget-detail-1 text-right">
                     <h2 class="font-weight-normal pt-2 mb-1" style="font-size: 17px !important;">
                     US$ {{ $spent->sum('spent') }}
                      </h2>
-                    <p class="text-muted mb-1">Spent to date</p>
+                    <p class="text-muted mb-1">Spent To Date</p>
                 </div>
             </div>
         </div>
@@ -102,15 +110,23 @@
 
             <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-pink badge-pill float-left mt-3">50.7% <i
+                    <span class="badge badge-pink badge-pill float-left mt-3">
+                        @if($recieved->sum('amount') > 0)
+                            {{ number_format($spent->sum('spent') / $recieved->sum('amount') * 100, 2) }}
+                        @endif
+                        % <i
                             class="mdi mdi-trending-up"></i> </span>
-                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{ $recieved->sum('recieved') - $spent->sum('spent') }} </h2>
+                    <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{ $recieved->sum('amount') - $spent->sum('spent') }} </h2>
                     <p class="text-muted mb-3">Current Amount</p>
                 </div>
                 <div class="progress progress-bar-alt-pink progress-sm">
                     <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="77"
                         aria-valuemin="0" aria-valuemax="100" style="width: 50.7%;">
-                        <span class="sr-only">50.7% Complete</span>
+                        <span class="sr-only">
+                        @if($recieved->sum('received') > 0)
+                            {{ $spent->sum('spent') / $recieved->sum('recieved') * 100 }}
+                        @endif
+                        % Complete</span>
                     </div>
                 </div>
             </div>
@@ -144,7 +160,7 @@
             <div class="widget-chart-1">
                 <div class="widget-chart-box-1 float-left" dir="ltr">
                     <input data-plugin="knob" data-width="80" data-height="80" data-fgColor="#f05050 "
-                        data-bgColor="#F9B9B9" value="0.11" data-skin="tron" data-angleOffset="180"
+                        data-bgColor="#F9B9B9" value="100" data-skin="tron" data-angleOffset="180"
                         data-readOnly=true data-thickness=".15" />
                 </div>
 
@@ -164,7 +180,11 @@
 
             <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-success badge-pill float-left mt-3">0.002% <i
+                    <span class="badge badge-success badge-pill float-left mt-3">
+                        @if($weekPledge->sum('amount') > 0)
+                            {{ number_format($weekRecieved->sum('amount') / $weekPledge->sum('amount') * 100, 2) }}
+                        @endif
+                        % <i
                             class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{$weekRecieved->sum('amount')}}</h2>
                     <p class="text-muted mb-3">Honoured This Week</p>
@@ -187,7 +207,11 @@
 
             <div class="widget-box-2">
                 <div class="widget-detail-2 text-right">
-                    <span class="badge badge-pink badge-pill float-left mt-3">77% <i
+                    <span class="badge badge-pink badge-pill float-left mt-3">
+                        @if($weekRecieved->sum('amount') > 0)
+                            {{ $weekSpent->sum('spent') / $weekRecieved->sum('amount') * 100 }}
+                        @endif
+                        % <i
                             class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1" style="font-size: 17px !important;"> US$ {{$weekSpent->sum('spent')}} </h2>
                     <p class="text-muted mb-3">Spent This Week</p>

@@ -79,6 +79,13 @@
                                 <option value="1">PayPal</option>
                                 <option value="2">RTGS/ZWL</option>
                             </select>
+
+                             @error('payment_method')
+                                <br>
+                                <span class="alert alert-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group col-md-4">
                             <label for="focus_area" class="col-form-label">Where would you like your donation to go?</label>
@@ -88,6 +95,13 @@
                                 	<option value="{{ $area->id }}">{{ $area->name }}</option>
                                 @endforeach
                             </select>
+
+                             @error('focus_area')
+                                <br>
+                                <span class="alert alert-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -154,6 +168,13 @@
                                     <option value="{{ $province->id }}">{{ $province->name }}</option>
                                 @endforeach
                         </select>
+
+                         @error('province_id')
+                            <br>
+                            <span class="alert alert-danger" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group col-md-2">
                         <label for="zip" class="col-form-label">Zip Code</label>

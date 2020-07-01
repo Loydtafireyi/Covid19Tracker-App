@@ -24,9 +24,9 @@ class CreateDonateRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required',
+            'email' => 'required|email:rfc,dns',
             'phone' => 'required',
-            'amount' => 'required',
+            'amount' => 'required:numeric',
             'country' => 'required',
         ];
     }
