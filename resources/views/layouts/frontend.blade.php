@@ -163,7 +163,7 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a href="{{ env('PAYNOW_DONATE') }}" target="_blank"> <i class="mdi mdi-invert-colors"></i></i>Donate</a>
+                                <a href="{{ route('donate.create') }}"> <i class="mdi mdi-invert-colors"></i></i>Donate</a>
 
                             </li>
 

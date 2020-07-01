@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Province;
+use App\SelfPositive;
 use Illuminate\Http\Request;
 
 class SelfPositiveController extends Controller
@@ -26,7 +27,15 @@ class SelfPositiveController extends Controller
     {
         $provinces = Province::all();
 
-        return view('self-positive', compact('provinces'));
+        $self_tests = SelfPositive::all();
+
+        $self_positive = SelfPositive::where('tested', 'yes')->count();
+
+        $symptomatic = SelfPositive::where('symptoms', 'yes')->count();
+
+        $asymptomatic = SelfPositive::where('symptoms', 'no')->count();
+
+        return view('self-positive', compact('provinces', 'self_tests', 'self_positive', 'asymptomatic', 'symptomatic'));
     }
 
     /**
@@ -45,7 +54,7 @@ class SelfPositiveController extends Controller
             'email' => $request->email
         ]);
 
-        session()->flash('success', 'Test submitted successfully');
+        session()->flash('success', 'Thank you. Your test submitted successfully.');
 
         return redirect()->back();
     }

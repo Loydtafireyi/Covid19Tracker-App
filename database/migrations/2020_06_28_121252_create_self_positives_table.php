@@ -16,8 +16,8 @@ class CreateSelfPositivesTable extends Migration
         Schema::create('self_positives', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('province_id');
-            $table->boolean('tested');
-            $table->boolean('symptoms');
+            $table->string('tested');
+            $table->string('symptoms');
             $table->text('info')->nullable();
             $table->string('email');
             $table->timestamps();

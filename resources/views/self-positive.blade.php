@@ -26,7 +26,7 @@
     <div class="col-xl-3 col-md-6">
         <div class="card-box widget-user">
             <div class="text-center">
-                <h2 class="font-weight-normal text-primary" data-plugin="counterup">303</h2>
+                <h2 class="font-weight-normal text-primary" data-plugin="counterup">{{ $self_tests->count() }}</h2>
                 <h5>Total Self Tests</h5>
             </div>
         </div>
@@ -35,7 +35,7 @@
     <div class="col-xl-3 col-md-6">
         <div class="card-box widget-user">
             <div class="text-center">
-                <h2 class="font-weight-normal text-pink" data-plugin="counterup">6</h2>
+                <h2 class="font-weight-normal text-pink" data-plugin="counterup">{{ $self_positive }}</h2>
                 <h5>Self Positives</h5>
             </div>
         </div>
@@ -44,7 +44,7 @@
     <div class="col-xl-3 col-md-6">
         <div class="card-box widget-user">
             <div class="text-center">
-                <h2 class="font-weight-normal text-warning" data-plugin="counterup">154</h2>
+                <h2 class="font-weight-normal text-warning" data-plugin="counterup">{{ $symptomatic }}</h2>
                 <h5>Symptomatic</h5>
             </div>
         </div>
@@ -53,13 +53,19 @@
     <div class="col-xl-3 col-md-6">
         <div class="card-box widget-user">
             <div class="text-center">
-                <h2 class="font-weight-normal text-info" data-plugin="counterup">150</h2>
+                <h2 class="font-weight-normal text-info" data-plugin="counterup">{{ $asymptomatic }}</h2>
                 <h5>Asymptomatic</h5>
             </div>
         </div>
     </div>
 </div>
 <!-- end row -->
+
+@if(Session::has('success'))
+    <div class="alert alert-primary font-weight-bolder" role="alert">
+        {{ (Session::get('success')) }}
+    </div>
+@endif
 
 <div class="row">
     <div class="col-12">
@@ -68,7 +74,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="p-2">
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" action="{{ route('self-positive.store') }}" method="post">
+                            @csrf
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label">Province</label>
                                 <div class="col-sm-10">
@@ -82,54 +89,43 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2  col-form-label">Have you tested positive fo the corona?</label>
-                                <div class="ml-2 custom-control custom-radio">
-                                    <input type="radio" id="tested" name="tested" class="custom-control-input">
-                                    <label class="custom-control-label" for="tested">Yes</label>
-                                </div>
-                                <div class="ml-2 custom-control custom-radio">
-                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio2">No</label>
+                                <label class="col-sm-2  col-form-label" for="tested">Have you tested positive fo the corona?</label>
+                                 <div class="col-sm-6">
+                                    <select class="form-control" name="tested" id="tested">
+
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+
+                                    </select>
                                 </div>
                             </div>
 
                              <div class="form-group row">
-                                <label class="col-sm-2  col-form-label">Are you having symptoms?</label>
-                                <div class="ml-2 checkbox checkbox-primary checkbox-circle">
-                                    <input id="checkbox" type="checkbox">
-                                    <input id="checkb" type="checkbox">
-                                    <label for="checkbox-9">
-                                        No
-                                    </label>
-                                </div>
-                                <div class="ml-2 checkbox checkbox-danger checkbox-circle">
-                                    <input id="symptoms" name="symptoms" type="checkbox">
-                                    <label for="symptoms">
-                                        Yes
-                                    </label>
+                                <label class="col-sm-2  col-form-label" for="symptoms">Are you having symptoms?</label>
+                                <div class="col-sm-6">
+                                    <select class="form-control" name="symptoms" id="symptoms">
+
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+
+                                    </select>
                                 </div>
                             </div>
-
-                            <div class="radio radio-info form-check-inline">
-                                <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
-                                <label for="inlineRadio1"> Inline One </label>
-                            </div>
-
                                 <div class="form-group row">
-                                <label class="col-sm-2  col-form-label" for="simpleinput">Additional Info</label>
+                                <label class="col-sm-2  col-form-label" for="info">Additional Info</label>
                                 <div class="col-sm-10">
-                                    <input type="text" id="simpleinput" class="form-control" placeholder="Optional extra infomation">
+                                    <input type="text" id="info" name="info" class="form-control" placeholder="Optional extra infomation">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2  col-form-label" for="example-email">Email</label>
+                                <label class="col-sm-2  col-form-label" for="email">Email</label>
                                 <div class="col-sm-10">
-                                    <input type="email" id="example-email" name="example-email" class="form-control" placeholder="Email">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2  col-form-label" for="example-email">Ready?</label>
-                                <button type="button" class="ml-2 btn btn-info waves-effect width-md waves-light">Submit</button>
+                                <button type="submit" class="ml-2 btn btn-info waves-effect width-md waves-light">Submit</button>
                             </div>
                         </form>
                     </div>
