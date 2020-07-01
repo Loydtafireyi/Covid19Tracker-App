@@ -68,7 +68,11 @@
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
                     <div class="progress-bar bg-success" role="progressbar" aria-valuenow="77"
-                        aria-valuemin="0" aria-valuemax="100" style="width: 49.3%;">
+                        aria-valuemin="0" aria-valuemax="100" style="width: 
+                        @if($pledges->sum('amount') > 0)
+                            {{ number_format($recieved->sum('amount') / $pledges->sum('amount') * 100, 2) }}
+                        @endif
+                        %;">
                         <span class="sr-only">49.3% Complete</span>
                     </div>
                 </div>
@@ -112,7 +116,7 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-pink badge-pill float-left mt-3">
                         @if($recieved->sum('amount') > 0)
-                            {{ number_format($spent->sum('spent') / $recieved->sum('amount') * 100, 2) }}
+                            {{ number_format($recieved->sum('amount') - $spent->sum('spent') / $recieved->sum('amount') * 100, 2) }}
                         @endif
                         % <i
                             class="mdi mdi-trending-up"></i> </span>
@@ -121,7 +125,7 @@
                 </div>
                 <div class="progress progress-bar-alt-pink progress-sm">
                     <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="77"
-                        aria-valuemin="0" aria-valuemax="100" style="width: 50.7%;">
+                        aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
                         <span class="sr-only">
                         @if($recieved->sum('received') > 0)
                             {{ $spent->sum('spent') / $recieved->sum('recieved') * 100 }}
@@ -218,7 +222,7 @@
                 </div>
                 <div class="progress progress-bar-alt-pink progress-sm">
                     <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="77"
-                        aria-valuemin="0" aria-valuemax="100" style="width: 77%;">
+                        aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
                         <span class="sr-only">77% Complete</span>
                     </div>
                 </div>
