@@ -121,10 +121,36 @@
                                 <label class="col-sm-2  col-form-label" for="email">Email</label>
                                 <div class="col-sm-10">
                                     <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+
+                                    @error('email')
+                                        <br>
+                                        <span class="alert alert-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
+
+                            <!-- Google Recaptcha -->
                             <div class="form-group row">
-                                <label class="col-sm-2  col-form-label" for="example-email">Ready?</label>
+                                <label class="col-sm-2  col-form-label" for="google_recapture">Screening Robots!</label>
+                                
+                                <div class="form-group">
+                                    <div class="ml-2 g-recaptcha" 
+                                        data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+                                    </div>
+
+                                    @error('g-recaptcha-response')
+                                    <br>
+                                    <span class="ml-2 alert alert-danger" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2  col-form-label" for="submission">Ready?</label>
                                 <button type="submit" class="ml-2 btn btn-info waves-effect width-md waves-light">Submit</button>
                             </div>
                         </form>
@@ -139,5 +165,11 @@
 </div>
 <!-- end row -->
 
+
+@endsection
+
+@section('scripts')
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 @endsection

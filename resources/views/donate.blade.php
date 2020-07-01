@@ -64,6 +64,13 @@
                         <div class="form-group col-md-4">
                             <label for="amount" class="col-form-label">Enter Amount</label>
                             <input type="number" class="form-control" id="amount" name="amount" value="{{ old('amount') }}" placeholder="Amount eg 100">
+
+                            @error('amount')
+                                <br>
+                                <span class="alert alert-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                          <div class="form-group col-md-4">
                             <label for="payment_method" class="col-form-label">Payment Method</label>
@@ -99,10 +106,24 @@
                     <div class="form-group col-md-6">
                         <label for="email" class="col-form-label">Email</label>
                         <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Email">
+
+                        @error('email')
+                            <br>
+                            <span class="alert alert-danger" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 <div class="form-group col-md-6">
                         <label for="phone" class="col-form-label">Phone Number</label>
                         <input type="number" id="phone" name="phone" class="form-control" value="{{ old('phone') }}" placeholder="263783044087">
+
+                        @error('phone')
+                            <br>
+                            <span class="alert alert-danger" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                 </div>
                 </div>
                 <div class="form-group">
@@ -117,6 +138,13 @@
                     <div class="form-group col-md-6">
                         <label for="country" class="col-form-label">Country</label>
                         <input type="text" class="form-control" id="country" name="country" value="{{ old('country') }}">
+
+                         @error('country')
+                            <br>
+                            <span class="alert alert-danger" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group col-md-4">
                         <label for="province_id" class="col-form-label">State/Province</label>

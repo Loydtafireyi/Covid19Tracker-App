@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Province;
 use App\SelfPositive;
 use Illuminate\Http\Request;
+use App\Http\Requests\SelfPositive\CreateSelfPositiveRequest;
 
 class SelfPositiveController extends Controller
 {
@@ -44,7 +45,7 @@ class SelfPositiveController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSelfPositiveRequest $request)
     {
         SelfPositive::create([
             'tested' => $request->tested,
@@ -54,7 +55,7 @@ class SelfPositiveController extends Controller
             'email' => $request->email
         ]);
 
-        session()->flash('success', 'Thank you. Your test submitted successfully.');
+        session()->flash('success', 'Thank you. Your test has been submitted successfully.');
 
         return redirect()->back();
     }

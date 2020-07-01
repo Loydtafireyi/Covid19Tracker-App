@@ -7,8 +7,9 @@ use App\Province;
 use App\FocusArea;
 use Paynow\Payments\Paynow;
 use Illuminate\Http\Request;
+use App\Http\Requests\Donate\CreateDonateRequest;
 
-class donationsController extends Controller
+class DonationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,7 +47,7 @@ class donationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function paynow(Request $request)
+    public function paynow(CreateDonateRequest $request)
     {
         $paynow = new Paynow(
         env('PAYNOW_ID'),

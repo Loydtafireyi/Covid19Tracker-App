@@ -98,6 +98,21 @@
                                             <label class="custom-control-label" for="checkbox-signup">I accept <a href="javascript: void(0);" class="text-dark">Terms and Conditions</a></label>
                                         </div>
                                     </div>
+
+                                    <!-- Google Recaptcha -->
+                                    <div class="form-group mb-3">
+                                        <div class="g-recaptcha" 
+                                            data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}">
+                                        </div>
+
+                                        @error('g-recaptcha-response')
+                                        <br>
+                                        <span class="alert alert-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
                                     <div class="form-group mb-0 text-center">
                                         <button class="btn btn-primary btn-block" type="submit"> Sign Up </button>
                                     </div>
@@ -131,5 +146,7 @@
         <!-- App js-->
         <script src="{{ asset('frontend/js/app.min.js') }}"></script>
         
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
     </body>
 </html
