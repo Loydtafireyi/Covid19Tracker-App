@@ -30,6 +30,13 @@
 					<td>
 						<a class="btn btn-primary btn-sm" href="{{route('deaths.edit', $death->id)}}">Edit</a>
 					</td>
+					<td>
+						<form action="{{route('deaths.destroy', $death->id)}}" method="post">
+							@csrf
+							@method('DELETE')
+							<button type="submit" class="btn btn-danger btn-sm">Delete</button>
+						</form>
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

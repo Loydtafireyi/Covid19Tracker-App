@@ -11,21 +11,33 @@
 			<div class="row">
 				<div class="col">
 					<label for="donor_type_id">Donor Type</label>
-					<select id="donor_type_id" name="donor_type_id" class="custom-select">
+					<select id="donor_type_id" name="donor_type_id" class="custom-select @error('donor_type_id') is-invalid @enderror">
 						<option selected disabled value="">Choose...</option>
 						@foreach($donortypes as $donor)
 						<option value="{{$donor->id}}">{{$donor->type}}</option>
 						@endforeach
 					</select>
+
+					@error('donor_type_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 				</div>
 				<div class="col">
 					<label for="country_id">Country</label>
-					<select id="country_id" name="country_id" class="custom-select">
+					<select id="country_id" name="country_id" class="custom-select @error('country_id') is-invalid @enderror">
 						<option selected disabled value="">Choose...</option>
 						@foreach($countries as $country)
 						<option value="{{$country->id}}">{{$country->country}}</option>
 						@endforeach
 					</select>
+
+					@error('country_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 				</div>
 				<div class="col">
 					<label for="name">Name</label>

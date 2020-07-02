@@ -6,6 +6,7 @@ use App\Spent;
 use App\Product;
 use App\FocusArea;
 use Illuminate\Http\Request;
+use App\Http\Requests\Spent\CreateSpentRequest;
 
 class SpentController extends Controller
 {
@@ -41,9 +42,9 @@ class SpentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSpentRequest $request)
     {
-        Spent::create([
+        Spent::create([ 
             'spent' => $request->spent,
             'product_id' => $request->product_id,
             'focus_area_id' => $request->focus_area_id,
@@ -87,7 +88,7 @@ class SpentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Spent $spent)
+    public function update(CreateSpentRequest $request, Spent $spent)
     {
         $data = $request->all();
 

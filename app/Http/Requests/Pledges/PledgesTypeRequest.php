@@ -24,7 +24,8 @@ class PledgesTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'amount' => 'required',
+            'donor_name_id' => 'required',
         ];
     }
 }

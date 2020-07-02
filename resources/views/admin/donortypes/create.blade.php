@@ -12,7 +12,13 @@
 			@endif
 				<div class="col">
 					<label for="type">Donor Type</label>
-					<input type="text" name="type" id="type" class="form-control" value="{{ isset($donortype) ? $donortype->type : '' }}">
+					<input type="text" name="type" id="type" class="form-control @error('type') is-invalid @enderror" value="{{ isset($donortype) ? $donortype->type : '' }}">
+
+					@error('type')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 				</div>
 				<div class="form-group ml-3 mt-3 mb-0">
 					<button class="btn btn-success" type="submit">{{ isset($donortype) ? 'Update Donor Type' : 'Add Donor Type' }}</button>

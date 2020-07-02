@@ -97,8 +97,12 @@ class DeathsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Death $death)
     {
-        //
+        $death->delete();
+
+        session()->flash('success', 'Deaths property deleted successfully!');
+
+        return redirect(route('deaths.index'));
     }
 }

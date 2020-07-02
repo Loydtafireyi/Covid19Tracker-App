@@ -24,7 +24,9 @@ class CreateTestsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'province_id' => 'required',
+            'tests' => 'required',
+            'tests_date' => 'required',
         ];
     }
 }

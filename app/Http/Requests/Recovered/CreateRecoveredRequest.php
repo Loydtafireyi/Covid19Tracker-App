@@ -24,7 +24,9 @@ class CreateRecoveredRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'province_id' => 'required',
+            'date_reported' => 'required',
+            'recovered' => 'required',
         ];
     }
 }

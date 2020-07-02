@@ -24,7 +24,7 @@ class CreateDonorTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'type' => 'required',
         ];
     }
 }

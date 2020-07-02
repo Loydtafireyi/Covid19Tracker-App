@@ -12,7 +12,7 @@
 			@endif
 			<div class="form-group">
 				<label for="province_id">Province</label>
-				<select name="province_id" id="province_id" class="form-control">
+				<select name="province_id" id="province_id" class="form-control @error('province_id') is-invalid @enderror">
 					@if(isset($recover))
 					<option>{{$recover->province->name}}</option>
 					@else
@@ -22,14 +22,32 @@
 					<option value="{{$province->id}}">{{$province->name}}</option>
 					@endforeach
 				</select>
+
+				@error('province_id')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 			</div>
 			<div class="form-group"> 
 				<label for="date_reported">Date Reported</label>
-				<input type="text" name="date_reported" id="date_reported" class="form-control" value="">
+				<input type="text" name="date_reported" id="date_reported" class="form-control @error('date_reported') is-invalid @enderror" value="">
+
+				@error('date_reported')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 			</div>
 			<div class="form-group">
 				<label for="recovered">Recovered</label>
-				<input type="number" name="recovered" id="recovered" class="form-control" value="{{isset($recover) ? $recover->recovered : ''}}">
+				<input type="number" name="recovered" id="recovered" class="form-control @error('recovered') is-invalid @enderror" value="{{isset($recover) ? $recover->recovered : ''}}">
+
+				@error('recovered')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 			</div>	
 			<div class="form-group">
 				<button type="submit" class="btn btn-success">{{isset($recover) ? 'Update Recovery' : 'Add Recovered'}}</button>

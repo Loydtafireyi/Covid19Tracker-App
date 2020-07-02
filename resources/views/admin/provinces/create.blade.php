@@ -13,20 +13,21 @@
 			<div class="form-group">
 				<label for="country_id">Country</label>
 				
-				<select id="country_id" name="country_id" class="custom-select">
+				<select id="country_id" name="country_id" class="custom-select @error('country_id') is-invalid @enderror">
 					<option selected disabled value="">Choose...</option>
 					@foreach($countries as $country)
 						<option value="{{$country->id}}">{{$country->country}}</option>
 					@endforeach
+
 					@error('country_id')
 						<div class="alert alert-danger mt-1" role="alert"></div>
 						<span>{{$message}}</span>
-					@endif
+					@enderror
 				</select>
 			</div>
 			<div class="form-group">
 				<label for="name">Add Province</label>
-				<input type="text" name="name" id="name" class="form-control" value="{{isset($province) ? $province->name : '' }}">
+				<input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{isset($province) ? $province->name : '' }}">
 
 				@error('name')
 					<div class="alert alert-danger mt-1" role="alert"></div>
@@ -35,7 +36,7 @@
 			</div>
 			<div class="form-group">
 				<label for="code">Province Code</label>
-				<input type="text" name="code" id="code" class="form-control" value="{{isset($province) ? $province->code : '' }}">
+				<input type="text" name="code" id="code" class="form-control @error('code') is-invalid @enderror" value="{{isset($province) ? $province->code : '' }}">
 
 				@error('code')
 					<div class="alert alert-danger mt-1" role="alert"></div>

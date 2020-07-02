@@ -24,7 +24,7 @@ class CreateFocusAreaTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
         ];
     }
 }

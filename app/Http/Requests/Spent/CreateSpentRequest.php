@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\DonorName;
+namespace App\Http\Requests\Spent;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateDonorNameTypeRequest extends FormRequest
+class CreateSpentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,10 @@ class CreateDonorNameTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:donor_names',
-            'donor_type_id' => 'required',
-            'country_id' => 'required',
+            'spent' => 'required',
+            'product_id' => 'required',
+            'focus_area_id' => 'required',
+
         ];
     }
 }

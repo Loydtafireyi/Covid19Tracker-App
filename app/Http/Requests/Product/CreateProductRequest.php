@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Ambulance;
+namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateAmbulancesRequest extends FormRequest
+class CreateProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class CreateAmbulancesRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'name' => 'required',
+            'quantity' => 'required',
         ];
     }
 }

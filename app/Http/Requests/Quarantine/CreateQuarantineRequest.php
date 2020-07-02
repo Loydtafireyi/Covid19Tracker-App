@@ -24,7 +24,10 @@ class CreateQuarantineRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'province_id' => 'required',
+            'quarantine_centre' => 'required',
+            'tollfree' => 'required',
+            'telephone' =>'required',
         ];
     }
 }
