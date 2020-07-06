@@ -217,23 +217,6 @@
         <a href="{{ env('WHATSAPP') }}" class="float" target="_blank"><i class="fa fa-whatsapp my-float"></i>
         </a>
 
-        <!-- Mobile App download constent banner -->
-        <div class="consent-banner">
-            <div class="section1">
-                <a href="feed.html">
-                <img 
-                    src="{{ asset('frontend/images/android.png') }}"
-                    alt="logo"
-                    title="Dowload Android App"
-                    width="150" 
-                    class="navigation__logo"
-                />
-                </a>
-                <p> Dowload App!</p> 
-            </div>
-            <i class="cancel fas fa-times"></i>
-        </div>
-
         <!-- Footer Start -->
         <footer class="footer">
             <div class="container-fluid">

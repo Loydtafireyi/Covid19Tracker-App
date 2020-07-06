@@ -36,7 +36,7 @@
                         <i class="mdi mdi-trending-up"></i> 
                     </span>
                     <h2 class="font-weight-normal mb-1" data-plugin="counterup"> {{ $infections->sum('infections') }} </h2>
-                    <p class="text-muted mb-3">Infected</p>
+                    <p class="text-muted mb-3">+ {{ $todayInfections->sum('infections') }}</p>
                 </div>
                 <div class="progress progress-bar-alt-warning progress-sm">
                     <div class="progress-bar bg-warning" role="progressbar"
@@ -65,7 +65,7 @@
                         <i class="mdi mdi-trending-up"></i> 
                     </span>
                     <h2 class="font-weight-normal mb-1" data-plugin="counterup"> {{ $deaths->sum('deaths') }} </h2>
-                    <p class="text-muted mb-3">Deaths</p>
+                    <p class="text-muted mb-3">+ {{ $todayDeaths->sum('deaths') }}</p>
                 </div>
                 <div class="progress progress-bar-alt-danger progress-sm">
                     <div class="progress-bar bg-danger" role="progressbar"
@@ -93,7 +93,7 @@
                         <i class="mdi mdi-trending-up"></i> 
                     </span>
                     <h2 class="font-weight-normal mb-1" data-plugin="counterup"> {{ $recovered->sum('recovered') }} </h2>
-                    <p class="text-muted mb-3">Recoveries</p>
+                    <p class="text-muted mb-3">+ {{ $todayRecovered->sum('recovered') }}</p>
                 </div>
                 <div class="progress progress-bar-alt-success progress-sm">
                     <div class="progress-bar bg-success" role="progressbar"
@@ -117,7 +117,7 @@
                 <div class="widget-detail-2 text-right">
                     <span class="badge badge-primary badge-pill float-left mt-3">2.1% <i class="mdi mdi-trending-up"></i> </span>
                     <h2 class="font-weight-normal mb-1" data-plugin="counterup"> {{ $tests->sum('tests') }} </h2>
-                    <p class="text-muted mb-3">Tests Conducted</p>
+                    <p class="text-muted mb-3">+ {{ $todayTests->sum('tests') }}</p>
                 </div>
                 <div class="progress progress-bar-alt-primary progress-sm">
                     <div class="progress-bar bg-primary" role="progressbar"
