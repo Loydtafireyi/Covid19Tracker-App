@@ -1,5 +1,16 @@
 @extends('layouts.frontend')
 
+@section('seo')
+    <title>Zimbabwe Covid19 | Isolation Centres</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Zimbabwe Covid19 online resource tracker. Total Donor Pledges $ {{ $pledges->sum('amount') }}, Honoured Pledges Amount $ {{ $recieved->sum('amount') }}, Amount Spent {{ $spent->sum('spent') }}, Amount Left {{  $recieved->sum('amount') - $spent->sum('spent') }} }} . Track local COVID-19 funding resources with Total Pledges, Total Honoured and Total Spent plus donor location." name="description" />
+    <meta name="keywords" keywords="Zimbabwe covid19 donors, Zimbabwe covid19 resources, Zimbabwe covid19 cash spent, The latest maps and charts on the spread of COVID-19 in Zimbabwe, including cases, deaths, closures and restrictions, Corona virus Zimbabwe, coronavirus death in zimbabwe, covid19 coronavirus statistics in Zimbabwe, harare covid19, Bulawayo corona virus stats, covid19 in zimbabwe by province, Live statistics and coronavirus news tracking the number of confirmed cases, recovered patients, tests, and death toll due to the COVID-19 coronavirus from Zimbabwe">
+    <meta property="og:image" content="https://covid19zim.online/frontend/images/zimbabwe (1).svg">
+    <meta property="og:url" content="https://covid19zim.online/">
+    <meta content="Loyd" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+@endsection
+
 @section('page_title')
 <!-- start page title -->
 <div class="row">

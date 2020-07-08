@@ -1,5 +1,16 @@
 @extends('layouts.frontend')
 
+@section('seo')
+    <title>Zimbabwe Covid19 | Privacy Policy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Zimbabwe Covid19 online tracker. Deaths {{ $deaths->sum('deaths') }}, Infected {{ $infections->sum('infections') }}, Recovered {{ $recovered->sum('recovered') }}, Tests {{ $tests->sum('tests') }} . Track local COVID-19 with active, recoveries and death rate on the map." name="description" />
+    <meta name="keywords" keywords="The latest maps and charts on the spread of COVID-19 in Zimbabwe, including cases, deaths, closures and restrictions, Corona virus Zimbabwe, coronavirus death in zimbabwe, covid19 coronavirus statistics in Zimbabwe, harare covid19, Bulawayo corona virus stats, covid19 in zimbabwe by province, Live statistics and coronavirus news tracking the number of confirmed cases, recovered patients, tests, and death toll due to the COVID-19 coronavirus from Zimbabwe">
+    <meta property="og:image" content="https://covid19zim.online/frontend/images/zimbabwe (1).svg">
+    <meta property="og:url" content="https://covid19zim.online/">
+    <meta content="Loyd" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+@endsection
+
 @section('content')
 
 <div class="row">

@@ -45,7 +45,7 @@ class TestsController extends Controller
             'tests_date' => $request->tests_date
         ]);
 
-        session()->flash('success', "$Tests added succesfully");
+        session()->flash('success', "Tests added succesfully");
 
         return redirect()->route('tests.index');
     }
