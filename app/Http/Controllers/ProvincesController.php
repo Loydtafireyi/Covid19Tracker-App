@@ -21,7 +21,7 @@ class ProvincesController extends Controller
      */
     public function index()
     {   
-        $provinces = Province::paginate(5);
+        $provinces = Province::orderBy('name')->paginate(5);
         return view('admin.provinces.index', compact('provinces'));
     }
 

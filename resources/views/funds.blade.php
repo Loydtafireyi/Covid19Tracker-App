@@ -250,7 +250,7 @@
                 @if($weekRecieved->count() >0)
                     {{ $weekSpent->sum('spent') / $weekRecieved->sum('amount') }}
                 @else
-                    3
+                    
                 @endif
                 " />
             <h5 class="text-muted">Percentage Spent for the Week</h5>
@@ -360,9 +360,9 @@
 	            </tr>
 	            </thead>
 	            <tbody>
-	                @foreach($donorname as $donor)
+	                @foreach($donorname as $index => $donor)
                     <tr>
-                        <td>{{ $donor->id }}</td>
+                        <td>{{ $index + 1 }}</td>
                         <td>{{ $donor->name }}</td>
                         <td>{{ $donor->pledges->sum('amount') }}</td>
                         <td>{{ $donor->recieveds->sum('amount') }}</td>

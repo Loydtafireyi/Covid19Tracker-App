@@ -76,28 +76,21 @@
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                                <!-- item-->
-                                <div class="dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome !</h6>
-                                </div>
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="fe-user"></i>
-                                    <span>My Account</span>
-                                </a>
-    
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                @if(auth()->user()->isAdmin())
+                                <a href="{{ route('home') }}" target="_blank"  class="dropdown-item notify-item">
                                     <i class="fe-settings"></i>
-                                    <span>Settings</span>
+                                    <span>Admin Dashboard</span>
                                 </a>
+                                @endif
     
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="fe-lock"></i>
-                                    <span>Lock Screen</span>
+                                <a href="" class="dropdown-item notify-item">
+                                    <i class="fe-user"></i>
+                                    <span>My Profile</span>
                                 </a>
+    
     
                                 <div class="dropdown-divider"></div> 
     

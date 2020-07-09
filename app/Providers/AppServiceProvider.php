@@ -41,11 +41,11 @@ class AppServiceProvider extends ServiceProvider
     {
         View::share('requestAmbulances', RequestAmbulance::all());
         View::share('infections', Infection::all());
-        View::share('provinces', Province::all());
+        View::share('provinces', Province::all()->sortBy('name'));
         View::share('recovered', Recovered::all());
         View::share('deaths', Death::all());
         View::share('tests', Test::all());
-        View::share('quarantines', Quarantine::all());
+        View::share('quarantines', Quarantine::all()->sortBy('province_id'));
         View::share('pledges', Pledge::all());
         View::share('recieved', Recieved::all());
         View::share('spent', Spent::all());
