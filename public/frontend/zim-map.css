@@ -10,7 +10,7 @@
 }
 
 .map g {
-  stroke-width: 1px;
+  stroke-width: 2px;
 }
 
 .map g:hover {
@@ -52,7 +52,7 @@
   and (min-width: 1080px)
   and (max-width: 250000px) {
     .map{
-      width: 50% !important;
+      width: 100% !important;
     }
 
   }

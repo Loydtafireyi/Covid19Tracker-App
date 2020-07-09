@@ -146,7 +146,7 @@
 <!-- end row -->
 
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-6">
         <div class="card-box">
 
             <h4 class="header-title mt-0 mb-3">Zimbabwe Map  -  Hover to see stats by Province</h4>
@@ -206,6 +206,13 @@
             <!-- <div id="world-map-markers" style="height: 420px"></div> -->
         </div>
     </div><!-- end col -->
+
+    <div class="col-lg-6">
+        <div class="card-box">
+            <canvas id="loyd" width="400" height="400"></canvas>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col">
             <div class="card-box">
@@ -258,6 +265,49 @@
 <!-- ============================================================== -->
 
 @section('map-scripts')
+    <!-- Chart JS -->
+    <script src="{{ asset('frontend/libs/chart-js/Chart.bundle.min.js') }}"></script>
+
+    <script>
+    var ctx = document.getElementById('loyd').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Covid-19 Cases',
+                data: [2, 50, 100, 200, 800],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
 

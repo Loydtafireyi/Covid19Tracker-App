@@ -231,9 +231,6 @@
         <!-- App js-->
         <script src="{{ asset('frontend/js/app.min.js') }}"></script>
 
-        <!-- Custom js-->
-        <script src="{{ asset('frontend/js/custom.js') }}"></script>
-
          <script src="https://kit.fontawesome.com/661021e154.js" crossorigin="anonymous"></script>
 
         <!-- Zimbabwe map scripts -->
