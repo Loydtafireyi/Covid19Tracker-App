@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
         User::create([
         	'name' => 'Loyd Admin',
         	'email' => 'admin@admin.com',
-        	'admin' => 1,
+        	'admin' => 2,
         	'avatar' => 'https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?cs=srgb&dl=person-wearing-red-hoodie-1097456.jpg&fm=jpg',
         	'password' => bcrypt('admin123'),
         ]);

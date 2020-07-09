@@ -43,6 +43,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
 	Route::resource('admin/recieved', 'RecievedController');
 	Route::resource('admin/products', 'ProductController');
 	Route::resource('admin/spent', 'SpentController');
+	Route::resource('admin/users', 'Admin\UserController');
 });
 
 Route::resource('self-positive', 'SelfPositiveController');

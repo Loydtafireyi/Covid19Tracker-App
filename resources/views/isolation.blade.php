@@ -115,7 +115,7 @@
                                         <th data-priority="3">General Numbers</th>
                                     </tr>
                                     </thead>
-                                    <tbody class="text-center">
+                                    <tbody class="text-left">
                                      @foreach($quarantines as $centres)
                                     <tr>
                                         <th><span class="co-name">{{ $centres->province->name }}</span></th>

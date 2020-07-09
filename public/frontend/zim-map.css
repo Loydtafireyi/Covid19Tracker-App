@@ -44,6 +44,15 @@
         }
 
         .map g {
-  stroke-width: 3;
+      stroke-width: 3;
+  }
 }
-}
+
+@media only screen
+  and (min-width: 1080px)
+  and (max-width: 250000px) {
+    .map{
+      width: 50% !important;
+    }
+
+  }

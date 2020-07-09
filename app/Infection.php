@@ -9,11 +9,6 @@ class Infection extends Model
 {
 	protected $fillable = ['province_id', 'date_reported', 'infections'];
 
-// 	protected $dates = [
-//     'created_at',
-//     'updated_at',
-//     'date_reported',
-// ];
 
     public function province()
     {

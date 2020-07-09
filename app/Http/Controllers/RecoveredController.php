@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Province;
 use App\Recovered;
 use Illuminate\Http\Request;
+use App\Http\Requests\Recovered\UpdateRecoveredRequest;
 use App\Http\Requests\Recovered\CreateRecoveredRequest;
 
 class RecoveredController extends Controller
@@ -83,9 +84,13 @@ class RecoveredController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateRecoveredRequest $request, Recovered $recovered)
+    public function update(UpdateRecoveredRequest $request, Recovered $recovered)
     {
-        $data = $request->all();
+        $data = $request->only([
+            'province_id',
+            'date_reported',
+            'recovered',
+        ]);
 
         $recovered->update($data);
 

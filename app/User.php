@@ -47,4 +47,5 @@ class User extends Authenticatable
     {
         return $this->admin == 1;
     }
+
 }

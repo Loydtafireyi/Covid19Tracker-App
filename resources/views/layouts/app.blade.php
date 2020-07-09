@@ -202,6 +202,13 @@
                                 </a>
                                 <span class="text-white"></span>
                             </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center bg-primary border-white">
+                                <a href="{{ route('users.index') }}" class="text-decoration-none">
+                                    <i class="fas fa-users text-white"></i>
+                                    <span class="text-white text-decoration-none text-uppercase">Users</span>
+                                </a>
+                                <span class="text-white"></span>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-9">

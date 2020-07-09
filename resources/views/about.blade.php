@@ -19,7 +19,7 @@
             <div class="row justify-content-center">
                 <div class="col-sm-8">
                     <div class="text-center">
-                        <h3>COVID-19 & Fund Tracker</h3>
+                        <h3>COVID-19 Cases & Fund Tracker</h3>
                         <p class="text-muted"> This Tracker was made by Eloquent Geeks & BLCK Creative Studios in a collaborative effort to efficiently report COVID 19 information in real time and to provide transparency in COVID 19 Fund Tracking and Allocation Breakdown. We the undersigned,
                             acknowledge all efforts so far in responding to the COVID-19 pandemic
                             and the steps taken to publish reports.

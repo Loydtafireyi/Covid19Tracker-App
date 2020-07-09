@@ -8,16 +8,12 @@
 		<form action="{{isset($recover) ? route('recovered.update', $recover->id) : route('recovered.store')}}" method="POST">
 			@csrf
 			@if(isset($recover))
-				@method('PUT')
+				@method('PATCH')
 			@endif
 			<div class="form-group">
 				<label for="province_id">Province</label>
 				<select name="province_id" id="province_id" class="form-control @error('province_id') is-invalid @enderror">
-					@if(isset($recover))
-					<option>{{$recover->province->name}}</option>
-					@else
 					<option selected disabled value="">Choose..</option>
-					@endif
 					@foreach($provinces as $province)
 					<option value="{{$province->id}}">{{$province->name}}</option>
 					@endforeach
@@ -31,7 +27,7 @@
 			</div>
 			<div class="form-group"> 
 				<label for="date_reported">Date Reported</label>
-				<input type="text" name="date_reported" id="date_reported" class="form-control @error('date_reported') is-invalid @enderror" value="">
+				<input type="text" name="date_reported" id="" class="form-control @error('date_reported') is-invalid @enderror" value="{{isset($recover) ? $recover->date_reported : ''}}">
 
 				@error('date_reported')
                     <span class="invalid-feedback" role="alert">
