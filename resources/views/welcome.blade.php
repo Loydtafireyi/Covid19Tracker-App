@@ -203,15 +203,18 @@
                      </circle>
                 </svg>
             </div>
-            <!-- <div id="world-map-markers" style="height: 420px"></div> -->
         </div>
     </div><!-- end col -->
 
-    <div class="col-lg-6">
+     <div class="col-lg-6">
         <div class="card-box">
-            <canvas id="loyd" width="400" height="400"></canvas>
+            <div class="map">
+                <canvas id="loyd" width="400" height="400"></canvas>
+            </div>
         </div>
-    </div>
+    </div><!-- end col-->            
+</div>
+    
 
     <div class="row">
         <div class="col">
