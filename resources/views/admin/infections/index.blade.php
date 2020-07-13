@@ -9,6 +9,28 @@
 	</ol>
 </nav>
 
+<div class="card mb-3">
+	<div class="card-body">
+		<form action="{{ route('import-infections') }}" method="post"  enctype="multipart/form-data">
+			@csrf
+			<div class="row">
+				<div class="form-group">
+					<label>Upload Cases Excel/CSV Sheet</label>
+					<input type="file" name="file" id="file" class="form-control @error('date_reported') is-invalid @enderror">
+
+					@error('file')
+						<div class="alert alert-danger mt-1" role="alert"></div>
+						<span>{{$message}}</span>
+					@enderror
+				</div>
+				<div class="form-group mt-4 ml-5">
+					<button type="submit" class="btn btn-primary">Upload Excel File</button>
+				</div>
+			</div>
+		</form>	
+	</div>
+</div>
+
 <div class="card">
 	<div class="card-header">
 		<span class="text-uppercase">List of Infections</span>

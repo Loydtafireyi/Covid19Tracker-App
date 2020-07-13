@@ -5,20 +5,33 @@
     <div class="card-header text-uppercase">Admin Dashboard</div>
 
     <div class="card-body">
-        <table class="table table-bordered table-dark table-hover">
-        	<thead class="font-weight-normal text-uppercase">
-        		<th>Cases</th>
-        		<th>Deaths</th>
-        		<th>Donations</th>
-        	</thead>
-        	<tbody>
-        		<tr>
-        			<td>{{ $infections->count() }}</td>
-        			<td>{{ $deaths->count() }}</td>
-        			<td></td>
-        		</tr>
-        	</tbody>
-        </table>
+        <div class="row justify-content-center">
+            <div class="card mt-2 bg-danger ml-3 rounded" style="width: 10rem; height: 10rem;">
+                <a href="{{ route('infections.index') }}">
+                    <img src="{{ asset('frontend/images/virus.svg') }}" class="card-img-top p-2" alt="...">
+                </a>
+            </div>
+
+            <div class="card mt-2 bg-success ml-3 rounded" style="width: 10rem; height: 10rem;">
+                <a href="">
+                    <img src="{{ asset('frontend/images/survey.svg') }}" class="card-img-top p-2" alt="...">
+                </a>
+            </div>
+
+            <div class="card mt-2 bg-primary ml-3 rounded" style="width: 10rem; height: 10rem;">
+                <a href="{{ route('donor-name.index') }}">
+                    <img src="{{ asset('frontend/images/money-bag.svg') }}" class="card-img-top p-2" alt="...">
+                </a>
+            </div>
+
+            <div class="card mt-2 bg-warning ml-3 rounded" style="width: 10rem; height: 10rem;">
+                <a href="">
+                    <img src="{{ asset('frontend/images/settings.svg') }}" class="card-img-top p-2" alt="...">
+                </a>
+            </div>
+
+        </div>
     </div>
 </div>
+
 @endsection

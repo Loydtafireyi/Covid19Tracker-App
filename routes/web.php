@@ -1,5 +1,5 @@
 <?php
-
+use App\Infection;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +11,16 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index')->name('welcome');
+// test csv import routes
+Route::get('import', function () {
+	(new Infection())->importToDB();
+	dd('done');
+});
+
+Route::middleware(['isMobile'])->group(function () {
+	Route::get('/', 'WelcomeController@index')->name('welcome');
+});
+
 Route::get('stats-by-province', 'StatsByProvinceController@index')->name('provinces');
 Route::get('funds/tracker', 'FundsTrackerController@index')->name('funds');
 Route::get('privacy/policy', 'PrivacyPolicyController@index')->name('privacy');
@@ -30,6 +39,7 @@ Route::middleware(['auth', 'admin'])->group(function ()
 	Route::get('admin/home', 'HomeController@index')->name('home')->middleware('admin');
 	Route::resource('admin/provinces', 'ProvincesController');
 	Route::resource('admin/infections', 'InfectionsController');
+	Route::post('admin/infections', 'InfectionsController@import')->name('import-infections');
 	Route::resource('admin/deaths', 'DeathsController');
 	Route::resource('admin/recovered', 'RecoveredController');
 	Route::resource('admin/tests', 'TestsController');
