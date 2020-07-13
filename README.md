@@ -3,6 +3,13 @@
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 
+## This Project can only be used for educational purposes and product test.
+## For Production & Commercial Purposes Contact me on:-
+- +263 783 044 087 (Calls Or Whatsapp)
+- loydtafireyi@gmail.com
+
+## NB: Using this project for production and commercial use without a Commercial lisence will cost you $USD 50 000.00 as pernalty
+
 ## Covid-19 Funds & Cases Tracker
 
 Track your local covid19 cases, deaths, recoveries and doner funds. You have total control over the numbers.
